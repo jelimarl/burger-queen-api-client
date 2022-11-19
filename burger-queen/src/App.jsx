@@ -1,13 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+// import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import reactLogo from './assets/react.svg'
+// import './App.css'
+import './styles/loginView.css'
+import './styles/adminView.css'
+import { LoginView } from './components/logingView.jsx'
+import { AdminView } from './components/adminView.jsx'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <div>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<LoginView />} />
+          <Route path='/admin-products' element={<AdminView />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
@@ -26,7 +40,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
     </div>
   )
 }

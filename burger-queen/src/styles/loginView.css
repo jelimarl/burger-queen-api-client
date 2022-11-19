@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.loginComponent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.logoMobile {
+  height: 42.5vw;
+
+}
+
+.logoDesk {
+  display: none;
+}
+
+.boxForm {
+  width: 80vw;
+  height: 110vw;
+  border-radius: 5vw;
+  padding-top: 16vw;
+  border: 0.5vw solid #F0B44C;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vw;
+}
+
+.titleLogin {
+  color: rgb(64, 64, 64);
+  margin-bottom: 13vw;
+  font-size: 7vw;
+  font-weight: 600;
+}
+
+.emailInput {
+  width: 70vw;
+  height: 9vw;
+  color: rgb(64, 64, 64);
+  font-size: 4.5vw;
+  text-align: center;
+  border-radius: 5vw;
+  border: 0.5vw solid #F0B44C;
+}
+
+.emailInput:focus {
+  border-color: #F9965E;
+  outline: 0;
+}
+
+.emailInput::placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(172, 172, 172);
+}
+
+.passwordInput {
+  width: 70vw;
+  height: 9vw;
+  color: rgb(64, 64, 64);
+  font-size: 4.5vw;
+  text-align: center;
+  border-radius: 5vw;
+  border: 0.5vw solid #F0B44C;
+}
+
+.passwordInput:focus {
+  border-color: #F9965E;
+  outline: 0;
+}
+
+.passwordInput::placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(172, 172, 172);
+}
+
+.loginBtn {
+  width: 70vw;
+  height: 9vw;
+  color: white;
+  margin-top: 11vw;
+  font-size: 5vw;
+  font-weight: 600;
+  border-radius: 5vw;
+  align-items: center;
+  background-color: #F0B44C;
+  border: white;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: rgb(0 0 0 / 15%) 0 6px 6px;
+}
+
+.loginBtn:hover {
+  background-color: #d78033;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+}
