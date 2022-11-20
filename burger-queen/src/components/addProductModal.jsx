@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal } from './modal.jsx';
+import '../styles/addProductModal.css'
 
 function AddProductModal(props) {
 

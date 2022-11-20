@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useModal } from "../hooks/useModal.js";
 import { AddProductModal } from "./addProductModal.jsx"
+import '../styles/adminView.css'
 
 function AdminView() {
 
@@ -18,7 +19,6 @@ function AdminView() {
                     <ul className="navAMenu">
                         <li><a className="navLink" href="/admin-products">Productos</a></li>
                         <li><a className="navLink" href="/admin-users">Usuarios</a></li>
-                        <li><a className="navLink" href="">Salir</a></li>
                     </ul>
                 </nav>
         

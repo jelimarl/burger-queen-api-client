@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { postUserPetition } from "../utils/petitions.js";
+import '../styles/loginView.css'
 
 function LoginView() {
 
