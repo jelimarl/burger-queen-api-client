@@ -27,7 +27,7 @@ body {
   display: none;
 }
 
-.boxForm {
+.formBox {
   width: 80vw;
   height: 110vw;
   border-radius: 5vw;
@@ -42,7 +42,7 @@ body {
   gap: 3vw;
 }
 
-.titleLogin {
+.loginTitle {
   color: rgb(64, 64, 64);
   margin-bottom: 13vw;
   font-size: 7vw;

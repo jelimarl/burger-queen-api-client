@@ -7,60 +7,54 @@ function LoginView() {
 
     const navigating = useNavigate();
 
-    const [emailUser, setEmailUser] = useState('')
+    const [errorMessage, setErrorMessage] = useState(null)
 
-    const [passwordUser, setPasswordUser] = useState('')
+    const [userEmail, setUserEmail] = useState('')
+
+    const [userPassword, setUserPassword] = useState('')
 
     function handleChangeEmail(event) {
-        setEmailUser(event.target.value)
+        setUserEmail(event.target.value)
     }
 
     function handleChangePassword(event) {
-        setPasswordUser(event.target.value)
+        setUserPassword(event.target.value)
     }
 
-    function authUser(event) {
+    function handleSubmit(event) {
 
         event.preventDefault()
 
-        console.log(emailUser)
-        console.log(passwordUser)
-
-        postUserPetition(emailUser, passwordUser)
+        postUserPetition(userEmail, userPassword)
             .then((response) => {
                 console.log(response)
-                const errorMessage = document.getElementById('errorMessage')
-                errorMessage.innerHTML = ''
+                setErrorMessage(null)
 
                 if (response.data.user.role === 'admin') {
-                    console.log('Tienes acceso')
                     navigating('/admin-products');
                 }
             })
             .catch((error) => {
                 console.log(error)
                 if (error.response.data === 'Incorrect password') {
-                    console.log('Contraseña incorrecta')
-                    errorMessage.innerHTML = 'Contraseña incorrecta'
+                    setErrorMessage('Contraseña incorrecta')
                 }
                 else {
-                    console.log('Usuario no encontrado')
-                    errorMessage.innerHTML = 'Usuario no encontrado'
+                    setErrorMessage('Usuario no encontrado')
                 }
-
             })
     }
 
     return (
         <section className="loginComponent">
 
-            <section className="sectionImg">
+            <section className="imgSection">
                 <img src="/burgerQueenThin.jpg" className="logoMobile" alt="Burger logo" />
                 <img src="/burgerQueenBig.jpg" className="logoDesk" alt="Burger logo" />
             </section>
-            <section className="boxForm">
-                <form className='loginForm' onSubmit={authUser}>
-                    <h2 className="titleLogin">
+            <section className="formBox">
+                <form className='loginForm' onSubmit={handleSubmit}>
+                    <h2 className="loginTitle">
                         Inicia Sesión
                     </h2>
                     <input
@@ -69,7 +63,7 @@ function LoginView() {
                         placeholder="Introduce Email"
                         name="email"
                         required
-                        value={emailUser}
+                        value={userEmail}
                         onChange={handleChangeEmail}
                     />
                     <input
@@ -78,10 +72,11 @@ function LoginView() {
                         placeholder="Introduce Contraseña"
                         name="password"
                         required
-                        value={passwordUser}
+                        value={userPassword}
                         onChange={handleChangePassword}
                     />
-                    <p id="errorMessage"></p>
+                    {errorMessage ? (<p id="errorMessage">{errorMessage}</p>) : (null)}
+
                     <button type="submit" className="loginBtn">
                         Ingresar
                     </button>
