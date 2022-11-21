@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useModal } from "../hooks/useModal.js";
 import { AddProductModal } from "./addProductModal.jsx"
 import '../styles/adminView.css'
+import { Header } from "./header.jsx"
 
 function AdminView() {
 
@@ -11,31 +12,20 @@ function AdminView() {
 
     return (
         <div className="adminView">
-            <header className="header">
-                <div className="headerImg">
-                    <img src="/burger-queen-header.png" className="headerLogoBig" alt="Burger logo" />
-                </div>
-                <nav className="navMenu">
-                    <ul className="navAMenu">
-                        <li><a className="navLink" href="/admin-products">Productos</a></li>
-                        <li><a className="navLink" href="/admin-users">Usuarios</a></li>
-                    </ul>
-                </nav>
-        
-            </header>
+            <Header />
 
             <section className="productsList">
                 {/* componente de productos */}
-            
-            <button onClick={openAddProductModal} className="addProducts">
-                Agregar Productos
-            </button>
 
-            <AddProductModal
-                isOpen={isOpenAddProductModal}
-                closeModal={closeAddProductModal}
-            >
-            </AddProductModal>
+                <button onClick={openAddProductModal} className="addProducts">
+                    Agregar Productos
+                </button>
+
+                <AddProductModal
+                    isOpen={isOpenAddProductModal}
+                    closeModal={closeAddProductModal}
+                >
+                </AddProductModal>
             </section>
         </div>
     );
