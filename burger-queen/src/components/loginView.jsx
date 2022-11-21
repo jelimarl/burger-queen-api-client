@@ -27,6 +27,7 @@ function LoginView() {
 
         postUserPetition(userEmail, userPassword)
             .then((response) => {
+                window.sessionStorage.setItem("accessToken", response.data.accessToken);
                 console.log(response)
                 setErrorMessage(null)
 

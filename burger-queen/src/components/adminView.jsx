@@ -3,6 +3,7 @@ import { useModal } from "../hooks/useModal.js";
 import { AddProductModal } from "./addProductModal.jsx"
 import '../styles/adminView.css'
 import { Header } from "./header.jsx"
+import { ProductList } from "./productList.jsx"
 
 function AdminView() {
 
@@ -13,6 +14,8 @@ function AdminView() {
     return (
         <div className="adminView">
             <Header />
+
+            <ProductList />
 
             <section className="productsList">
                 {/* componente de productos */}
