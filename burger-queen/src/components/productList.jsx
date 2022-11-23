@@ -21,14 +21,13 @@ function ProductList() {
       })
   }, [])
 
-
   return (
     <div>
       {
         list.map((product, index) => (
           // console.log(product.name)
 
-          <div className="cards" key={index}>
+          <div className="productCard" key={index}>
             <Card border="secondary" style={{ width: '20rem' }}>
               <Card.Img variant='top' src={product.image} className="cardImg" />
               <Card.Body>

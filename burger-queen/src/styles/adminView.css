@@ -8,6 +8,17 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.adminView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  margin-top: 1rem;
+}
+
 .addProducts {
   width: 70vw;
   height: 10vw;
@@ -27,7 +38,7 @@ body {
   background-color: #d78033;
 }
 
-.productsList{
+.productsList {
   display: flex;
   justify-content: center;
 }

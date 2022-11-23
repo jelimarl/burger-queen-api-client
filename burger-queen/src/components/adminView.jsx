@@ -5,50 +5,64 @@ import '../styles/adminView.css'
 import { Header } from "./header.jsx"
 import { ProductList } from "./productList.jsx"
 import Button from "react-bootstrap/Button";
+import Modal from 'react-bootstrap/Modal';
+
 
 function AdminView() {
 
-    const [isOpenAddProductModal, openAddProductModal, closeAddProductModal] = useModal()
+    // const [isOpenAddProductModal, openAddProductModal, closeAddProductModal] = useModal()
 
     //const [isOpenEditProductModal, openEditProductModal, closeEditProductModal] = useModal()
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
-        <div className="adminView">
+        <div>
             <Header />
-            <ProductList />
-            {/* 
-            <section className="productsList"> */}
 
-            <button onClick={openAddProductModal} className="addProducts">
-                Agregar Productos
-            </button>
+            <div className="adminView">
 
-            {/* <Button
-                onClick={openAddProductModal}
-            >
-                Agregar Productos
-            </Button> */}
+                <>
+                    <Button variant="secondary" onClick={handleShow}>
+                        Agregar Producto
+                    </Button>
 
-            <AddProductModal
-                isOpen={isOpenAddProductModal}
-                closeModal={closeAddProductModal}
-            >
-            </AddProductModal>
-            {/* </section> */}
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Modal heading</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                            <Button variant="primary" onClick={handleClose}>
+                                Save Changes
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </>
+
+                <ProductList />
+                {/* 
+    <section className="productsList"> */}
+
+                {/* <button onClick={openAddProductModal} className="addProducts">
+        Agregar Productos
+    </button> */}
+
+                {/* <AddProductModal
+        isOpen={isOpenAddProductModal}
+        closeModal={closeAddProductModal}
+    >
+    </AddProductModal> */}
+                {/* </section> */}
+            </div>
         </div>
     );
-
-    < section  >
-
-        <section className="addProdModal">
-            {/* form para crear productos  */}
-        </section>
-
-        <section className="editProdModal">
-            {/* form para crear productos  */}
-        </section>
-
-    </section >
 }
 
 export { AdminView }
