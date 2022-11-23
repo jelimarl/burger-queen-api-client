@@ -1,0 +1,18 @@
+.cards {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 25rem; */
+  margin: 1rem;
+}
+
+.card {
+  padding: 1rem;
+}
+
+.cardImg {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}

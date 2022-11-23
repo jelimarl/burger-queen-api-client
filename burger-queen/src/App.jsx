@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import './App.css'
 import { LoginView } from './components/loginView.jsx'
 import { AdminView } from './components/adminView.jsx'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   // const [count, setCount] = useState(0)

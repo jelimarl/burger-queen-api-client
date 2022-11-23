@@ -4,6 +4,7 @@ import { AddProductModal } from "./addProductModal.jsx"
 import '../styles/adminView.css'
 import { Header } from "./header.jsx"
 import { ProductList } from "./productList.jsx"
+import Button from "react-bootstrap/Button";
 
 function AdminView() {
 
@@ -14,40 +15,30 @@ function AdminView() {
     return (
         <div className="adminView">
             <Header />
-
             <ProductList />
+            {/* 
+            <section className="productsList"> */}
 
-            <section className="productsList">
-                {/* componente de productos */}
+            <button onClick={openAddProductModal} className="addProducts">
+                Agregar Productos
+            </button>
 
-                <button onClick={openAddProductModal} className="addProducts">
-                    Agregar Productos
-                </button>
+            {/* <Button
+                onClick={openAddProductModal}
+            >
+                Agregar Productos
+            </Button> */}
 
-                <AddProductModal
-                    isOpen={isOpenAddProductModal}
-                    closeModal={closeAddProductModal}
-                >
-                </AddProductModal>
-            </section>
+            <AddProductModal
+                isOpen={isOpenAddProductModal}
+                closeModal={closeAddProductModal}
+            >
+            </AddProductModal>
+            {/* </section> */}
         </div>
     );
 
     < section  >
-
-        <section className="header">
-            <div className="headerImg">
-                <img src="/burger-queen-logo.png" className="headerLogo" alt="Burger logo" />
-                <img src="/burger-queen-header.png" className="headerLogoBig" alt="Burger logo" />
-            </div>
-
-            <nav className="navMenu"></nav>
-            {/* Menú de navegació en react */}
-        </section>
-
-        <section className="productsList">
-            {/* componente de productos */}
-        </section>
 
         <section className="addProdModal">
             {/* form para crear productos  */}
