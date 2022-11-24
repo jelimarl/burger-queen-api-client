@@ -4,6 +4,7 @@ import { ProductCard } from "./productCard"
 import Card from "react-bootstrap/Card"
 import ListGroup from "react-bootstrap/ListGroup"
 import "../styles/productList.css"
+import Button from "react-bootstrap/Button"
 
 function ProductList() {
 
@@ -36,6 +37,8 @@ function ProductList() {
                   <ListGroup.Item>${product.price}</ListGroup.Item>
                   <ListGroup.Item>{product.type}</ListGroup.Item>
                 </ListGroup>
+                <Button className="btn edit" variant="outline-warning">Editar</Button>
+                <Button className="btn delete " variant="outline-danger">Eliminar</Button>
               </Card.Body>
             </Card>
           </div>

@@ -14,9 +14,9 @@ function Header() {
       <Navbar >
         <Container>
           <Nav className="me-auto">
-            <Link to="/" className="navLink">Inicio</Link>
             <Link to="/admin-products" className="navLink">Productos</Link>
             <Link to="/admin-users" className="navLink">Usuarios</Link>
+            <Link to="/" className="navLink logout">Salir</Link>
           </Nav>
         </Container>
       </Navbar>

@@ -7,6 +7,11 @@
   background-color: #F7CB58;
 } */
 
+/* .headerLogoBig {
+  width: 70vw;
+  margin: 20px 0px 5px 0px;
+} */
+
 .navbar {
   background-color: #F7CB58;
 }
@@ -26,7 +31,6 @@
   font-size: 5vw;
 }
 
-.headerLogoBig {
-  width: 70vw;
-  margin: 20px 0px 5px 0px;
+.logout {
+  margin-left: 6rem;
 }
