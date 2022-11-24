@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { getProducts } from "../utils/petitions.js"
-import { ProductCard } from "./productCard.jsx"
+import { getProducts } from "../utils/petitions"
+import { ProductCard } from "./productCard"
 import Card from "react-bootstrap/Card"
 import ListGroup from "react-bootstrap/ListGroup"
 import "../styles/productList.css"

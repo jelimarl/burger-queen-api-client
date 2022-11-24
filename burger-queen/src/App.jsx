@@ -2,8 +2,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import reactLogo from './assets/react.svg'
 // import './App.css'
-import { LoginView } from './components/loginView.jsx'
-import { AdminView } from './components/adminView.jsx'
+import { LoginView } from './views/loginView'
+import { AdminView } from './views/adminView'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

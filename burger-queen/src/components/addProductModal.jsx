@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from './modal.jsx';
+import { Modal } from './modal';
 import '../styles/addProductModal.css'
 
 function AddProductModal(props) {

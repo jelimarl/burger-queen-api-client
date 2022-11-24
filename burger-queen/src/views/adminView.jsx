@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useModal } from "../hooks/useModal.js";
-import { AddProductModal } from "./addProductModal.jsx"
+import { useModal } from "../hooks/useModal";
+import { AddProductModal } from "../components/addProductModal"
 import '../styles/adminView.css'
-import { Header } from "./header.jsx"
-import { ProductList } from "./productList.jsx"
+import { Header } from "../components/header"
+import { ProductList } from "../components/productList"
 import Button from "react-bootstrap/Button";
 import Modal from 'react-bootstrap/Modal';
 
