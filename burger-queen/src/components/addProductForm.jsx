@@ -63,9 +63,11 @@ function AddProductForm() {
           <option value='Almuerzo'>Almuerzo</option>
         </Form.Select>
       </Form.Group>
-      <Button className='btn add' variant="outline-warning" type="submit">
-        Guardar
-      </Button>
+      <div className="d-grid">
+        <Button className='btn add' variant="outline-warning" size='lg' type="submit">
+          Guardar
+        </Button>
+      </div>
     </Form>
   )
 }
