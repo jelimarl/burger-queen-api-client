@@ -19,4 +19,18 @@ function getProducts() {
   })
 }
 
-export { postUserPetition, getProducts }
+function saveProduct(dataProduct) {
+  let token = sessionStorage.getItem("accessToken")
+
+  return axios({
+    method: 'post',
+    url: urlAPI + 'products',
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    },
+    data: dataProduct
+  })
+}
+
+export { postUserPetition, getProducts, saveProduct }
