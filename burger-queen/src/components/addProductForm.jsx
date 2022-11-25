@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from "react-bootstrap/Button";
 import '../styles/addProductForm.css'
 import { saveProduct } from '../utils/petitions';
+import Swal from 'sweetalert2';
 
 function AddProductForm() {
 
@@ -16,21 +17,33 @@ function AddProductForm() {
   }
 
   function handleSubmit(event) {
+
     event.preventDefault()
+
+    const productForm = document.getElementById('myForm')
+    productForm.reset()
 
     saveProduct(dataProduct)
       .then((response) => {
         console.log(response)
+        if (response.status === 201) {
+          Swal.fire(
+            '¡Guardado!',
+            'El Producto se ha creado exitosamente.',
+            'success'
+          )
+        }
       })
       .catch((error) => {
         console.log(error)
       })
-
-    alert('Se creó el producto')
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+
+    <Form
+      id='myForm'
+      onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="">
         <Form.Control
           type="text"
