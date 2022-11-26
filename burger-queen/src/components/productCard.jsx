@@ -3,7 +3,7 @@ import { Card, ListGroup } from "react-bootstrap"
 import Button from "react-bootstrap/Button"
 import "../styles/productCard.css"
 import { deleteProduct } from "../utils/petitions"
-
+import Swal from 'sweetalert2';
 
 function ProductCard(props) {
   // console.log('props', props)
@@ -11,13 +11,33 @@ function ProductCard(props) {
   function handleDelete() {
     console.log(props.props.id)
 
-    deleteProduct(props)
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás deshacer esta acción!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '¡Sí, elimínalo!',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        deleteProduct(props)
+          .then((response) => {
+            console.log(response)
+
+            Swal.fire(
+              '¡Eliminado!',
+              'El Producto ha sido eliminado exitosamente.',
+              'success'
+            )
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+    })
   }
 
   return (
