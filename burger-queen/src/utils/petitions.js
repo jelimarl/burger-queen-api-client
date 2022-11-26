@@ -33,4 +33,17 @@ function saveProduct(dataProduct) {
   })
 }
 
-export { postUserPetition, getProducts, saveProduct }
+function deleteProduct(props) {
+  let token = sessionStorage.getItem("accessToken")
+
+  return axios({
+    method: 'delete',
+    url: `${urlAPI}products/${props.props.id}`,
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    }
+  })
+}
+
+export { postUserPetition, getProducts, saveProduct, deleteProduct }

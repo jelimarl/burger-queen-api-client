@@ -1,0 +1,13 @@
+.card {
+  padding: 1rem;
+}
+
+.cardImg {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: contain;
+}
+
+.delete {
+  margin-left: 6.5rem;
+}

@@ -6,17 +6,3 @@
   height: 25rem; */
   margin: 1rem;
 }
-
-.card {
-  padding: 1rem;
-}
-
-.cardImg {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-
-.delete {
-  margin-left: 6.5rem;
-}
