@@ -6,10 +6,10 @@ import { deleteProduct } from "../utils/petitions"
 import Swal from 'sweetalert2';
 
 function ProductCard(props) {
-  // console.log('props', props)
+  console.log('props', props)
 
   function handleDelete() {
-    console.log(props.props.id)
+    console.log(props.product.id)
 
     Swal.fire({
       title: '¿Estás seguro?',
@@ -32,6 +32,8 @@ function ProductCard(props) {
               'El Producto ha sido eliminado exitosamente.',
               'success'
             )
+
+            props.setUpdateList(!props.updateList)
           })
           .catch((error) => {
             console.log(error)
@@ -43,12 +45,12 @@ function ProductCard(props) {
   return (
 
     <Card style={{ width: '20rem' }}>
-      <Card.Img variant='top' src={props.props.image} className="cardImg" />
+      <Card.Img variant='top' src={props.product.image} className="cardImg" />
       <Card.Body>
-        <Card.Title>{props.props.name}</Card.Title>
+        <Card.Title>{props.product.name}</Card.Title>
         <ListGroup variant="flush">
-          <ListGroup.Item>{props.props.price}</ListGroup.Item>
-          <ListGroup.Item>{props.props.type}</ListGroup.Item>
+          <ListGroup.Item>{props.product.price}</ListGroup.Item>
+          <ListGroup.Item>{props.product.type}</ListGroup.Item>
         </ListGroup>
         <Button className="btn edit" variant="outline-warning">Editar</Button>
         <Button className="btn delete" variant="outline-danger" onClick={handleDelete}>Eliminar</Button>

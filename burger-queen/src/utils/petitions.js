@@ -38,7 +38,7 @@ function deleteProduct(props) {
 
   return axios({
     method: 'delete',
-    url: `${urlAPI}products/${props.props.id}`,
+    url: `${urlAPI}products/${props.product.id}`,
     headers: {
       'content-type': 'application/json',
       'authorization': `Bearer ${token}`

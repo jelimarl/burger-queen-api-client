@@ -7,6 +7,8 @@ function ProductList() {
 
   const [list, setList] = useState([])
 
+  const [updateList, setUpdateList] = useState(false)
+
   useEffect(() => {
 
     getProducts()
@@ -17,7 +19,7 @@ function ProductList() {
       .catch((error) => {
         console.log(error)
       })
-  }, [])
+  }, [updateList])
 
   return (
     <div>
@@ -26,7 +28,11 @@ function ProductList() {
 
           <div className="productCard" key={index}>
 
-            <ProductCard props={product} />
+            <ProductCard
+              product={product}
+              setUpdateList={setUpdateList}
+              updateList={updateList}
+            />
 
           </div>
 
