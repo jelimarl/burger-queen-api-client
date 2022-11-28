@@ -60,4 +60,17 @@ function editProduct(dataEditModal) {
   })
 }
 
-export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct }
+function getUsers() {
+  let token = sessionStorage.getItem("accessToken")
+
+  return axios({
+    method: 'get',
+    url: urlAPI + 'users',
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    }
+  })
+}
+
+export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers }

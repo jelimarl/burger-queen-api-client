@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import './App.css'
 import { LoginView } from './views/loginView'
 import { AdminView } from './views/adminView'
+import { AdminViewUsers } from './views/adminViewUsers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<LoginView />} />
           <Route path='/admin-products' element={<AdminView />} />
+          <Route path='/admin-users' element={<AdminViewUsers />} />
         </Routes>
       </BrowserRouter>
 

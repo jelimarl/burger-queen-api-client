@@ -19,7 +19,7 @@ body {
   margin-top: 1rem;
 }
 
-.addProducts {
+/* .addProducts {
   width: 70vw;
   height: 10vw;
   color: white;
@@ -36,9 +36,9 @@ body {
 
 .addProducts:hover {
   background-color: #d78033;
-}
+}  */
 
-.productsList {
+/* .productsList {
   display: flex;
   justify-content: center;
-}
+} */
