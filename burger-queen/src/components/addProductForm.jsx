@@ -7,6 +7,8 @@ import Swal from 'sweetalert2';
 
 function AddProductForm(props) {
 
+  // console.log('PROPS ADD', props)
+
   const [dataProduct, setDataProduct] = useState({ name: '', price: '', image: '', type: '' })
 
   function handleChange(event) {
@@ -23,13 +25,14 @@ function AddProductForm(props) {
     saveProduct(dataProduct)
       .then((response) => {
         console.log(response)
-       
-          Swal.fire(
-            '¡Guardado!',
-            'El Producto se ha creado exitosamente.',
-            'success'
-          )
-          props.props(false)
+
+        Swal.fire(
+          '¡Guardado!',
+          'El Producto se ha creado exitosamente.',
+          'success'
+        )
+        props.handleCloseAdd()
+        props.setUpdateList(!props.updateList)
       })
       .catch((error) => {
         console.log(error)

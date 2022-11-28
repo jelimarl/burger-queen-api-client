@@ -7,6 +7,7 @@ import { EditProductForm } from "./editProductForm"
 import Form from 'react-bootstrap/Form'
 import Button from "react-bootstrap/Button";
 import Swal from 'sweetalert2';
+import { AddProductForm } from "./addProductForm"
 
 function ProductList() {
 
@@ -18,6 +19,11 @@ function ProductList() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [showAdd, setShowAdd] = useState(false);
+
+  const handleCloseAdd = () => setShowAdd(false);
+  const handleShowAdd = () => setShowAdd(true);
 
   const [dataEditModal, setDataEditModal] = useState({})
 
@@ -64,7 +70,27 @@ function ProductList() {
   }
 
   return (
-    <div>
+    <div className="productList">
+
+      <Button variant="secondary" onClick={handleShowAdd}>
+        Agregar Producto
+      </Button>
+
+      <Modal show={showAdd} onHide={handleCloseAdd}>
+        <Modal.Header closeButton>
+          <Modal.Title>Crear Producto</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+          <AddProductForm
+            handleCloseAdd={handleCloseAdd}
+            setUpdateList={setUpdateList}
+            updateList={updateList}
+          />
+
+        </Modal.Body>
+      </Modal>
+
       <div>
         {
           list.map((product, index) => (
