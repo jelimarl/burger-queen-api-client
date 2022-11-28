@@ -6,7 +6,7 @@ import { deleteProduct } from "../utils/petitions"
 import Swal from 'sweetalert2';
 
 function ProductCard(props) {
-  console.log('props', props)
+  // console.log('props', props)
 
   function handleDelete() {
     console.log(props.product.id)
@@ -42,6 +42,12 @@ function ProductCard(props) {
     })
   }
 
+  function handleEdit() {
+
+    props.handleShow()
+    props.setDataEditModal(props.product)
+  }
+
   return (
 
     <Card style={{ width: '20rem' }}>
@@ -52,7 +58,7 @@ function ProductCard(props) {
           <ListGroup.Item>{props.product.price}</ListGroup.Item>
           <ListGroup.Item>{props.product.type}</ListGroup.Item>
         </ListGroup>
-        <Button className="btn edit" variant="outline-warning">Editar</Button>
+        <Button className="btn edit" variant="outline-warning" onClick={handleEdit}>Editar</Button>
         <Button className="btn delete" variant="outline-danger" onClick={handleDelete}>Eliminar</Button>
       </Card.Body>
     </Card>
