@@ -10,7 +10,7 @@ function UserCard(props) {
         <Card.Title>{props.user.email}</Card.Title>
         <ListGroup variant="flush">
           <ListGroup.Item><strong>Rol: </strong>{props.user.role}</ListGroup.Item>
-          <ListGroup.Item><strong>Contraseña: </strong>{props.user.password}</ListGroup.Item>
+          {/* <ListGroup.Item><strong>Contraseña: </strong>{props.user.password}</ListGroup.Item> */}
         </ListGroup>
       </Card.Body>
     </Card>

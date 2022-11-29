@@ -4,9 +4,9 @@ import { UserCard } from "./userCard"
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { AddUserForm } from "./addUserForm";
-import "../styles/productList.css"
+import "../styles/productsList.css"
 
-function UserList() {
+function UsersList() {
 
   const [list, setList] = useState([])
 
@@ -31,7 +31,7 @@ function UserList() {
   }, [updateList])
 
   return (
-    <div className="productList">
+    <div className="productsList">
 
       <Button variant="secondary" onClick={handleShowAdd}>
         Agregar Usuario
@@ -67,4 +67,4 @@ function UserList() {
   )
 }
 
-export { UserList }
+export { UsersList }

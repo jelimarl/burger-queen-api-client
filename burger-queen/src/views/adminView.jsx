@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/adminView.css'
 import { Header } from "../components/header"
-import { ProductList } from "../components/productList"
+import { ProductsList } from "../components/productsList"
 
 function AdminView() {
 
@@ -10,7 +10,7 @@ function AdminView() {
             <Header />
 
             <div className="adminView">
-                <ProductList />
+                <ProductsList />
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "../components/header"
-import { UserList } from "../components/userList"
+import { UsersList } from "../components/usersList"
 
 function AdminViewUsers() {
 
@@ -9,7 +9,7 @@ function AdminViewUsers() {
       <Header />
 
       <div className="adminView">
-        <UserList />
+        <UsersList />
 
       </div>
     </div>

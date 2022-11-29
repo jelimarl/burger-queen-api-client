@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react"
 import { getProducts } from "../utils/petitions"
 import { ProductCard } from "./productCard"
-import "../styles/productList.css"
+import "../styles/productsList.css"
 import Modal from "react-bootstrap/Modal"
 import { EditProductForm } from "./editProductForm"
 import Button from "react-bootstrap/Button";
 import { AddProductForm } from "./addProductForm"
 
-function ProductList() {
+function ProductsList() {
 
   const [list, setList] = useState([])
 
@@ -40,7 +40,7 @@ function ProductList() {
   // console.log(dataEditModal)
 
   return (
-    <div className="productList">
+    <div className="productsList">
 
       <Button variant="secondary" onClick={handleShowAdd}>
         Agregar Producto
@@ -94,4 +94,4 @@ function ProductList() {
   )
 }
 
-export { ProductList }
+export { ProductsList }

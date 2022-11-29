@@ -55,7 +55,7 @@ function ProductCard(props) {
       <Card.Body>
         <Card.Title>{props.product.name}</Card.Title>
         <ListGroup variant="flush">
-          <ListGroup.Item>{props.product.price}</ListGroup.Item>
+          <ListGroup.Item>${props.product.price}</ListGroup.Item>
           <ListGroup.Item>{props.product.type}</ListGroup.Item>
         </ListGroup>
         <Button className="btn edit" variant="outline-warning" onClick={handleEdit}>Editar</Button>
