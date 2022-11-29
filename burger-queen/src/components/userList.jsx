@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react"
 import { getUsers } from "../utils/petitions"
 import { UserCard } from "./userCard"
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { AddUserForm } from "./addUserForm";
 
 function UserList() {
 
   const [list, setList] = useState([])
+
+  const [showAdd, setShowAdd] = useState(false);
+
+  const handleCloseAdd = () => setShowAdd(false);
+  const handleShowAdd = () => setShowAdd(true);
+
+  const [updateList, setUpdateList] = useState(false)
 
   useEffect(() => {
 
@@ -17,21 +27,41 @@ function UserList() {
       .catch((error) => {
         console.log(error)
       })
-  }, [])
+  }, [updateList])
 
   return (
     <div>
-      {
-        list.map((user, index) => (
 
-          <div className="productCard" key={index}>
-            <UserCard
-              user={user}
-            />
-          </div>
+      <Button variant="secondary" onClick={handleShowAdd}>
+        Agregar Usuario
+      </Button>
 
-        ))
-      }
+      <Modal show={showAdd} onHide={handleCloseAdd}>
+        <Modal.Header closeButton>
+          <Modal.Title>Crear Usuario</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <AddUserForm
+            handleCloseAdd={handleCloseAdd}
+            setUpdateList={setUpdateList}
+            updateList={updateList}
+          />
+        </Modal.Body>
+      </Modal>
+
+      <div>
+        {
+          list.map((user, index) => (
+
+            <div className="productCard" key={index}>
+              <UserCard
+                user={user}
+              />
+            </div>
+
+          ))
+        }
+      </div>
     </div>
   )
 }

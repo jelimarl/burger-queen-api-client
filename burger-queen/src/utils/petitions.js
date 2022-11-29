@@ -73,4 +73,18 @@ function getUsers() {
   })
 }
 
-export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers }
+function saveUser(dataUser) {
+  let token = sessionStorage.getItem("accessToken")
+
+  return axios({
+    method: 'post',
+    url: urlAPI + 'users',
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    },
+    data: dataUser
+  })
+}
+
+export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser }
