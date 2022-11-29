@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { AddUserForm } from "./addUserForm";
 import "../styles/productsList.css"
+import { EditUserForm } from "./editUserForm";
 
 function UsersList() {
 
@@ -16,6 +17,13 @@ function UsersList() {
   const handleShowAdd = () => setShowAdd(true);
 
   const [updateList, setUpdateList] = useState(false)
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [dataEditModal, setDataEditModal] = useState({})
 
   useEffect(() => {
 
@@ -59,12 +67,27 @@ function UsersList() {
                 user={user}
                 setUpdateList={setUpdateList}
                 updateList={updateList}
+                handleShow={handleShow}
+                setDataEditModal={setDataEditModal}
               />
             </div>
 
           ))
         }
       </div>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Usuario</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <EditUserForm
+            dataEditModal={dataEditModal}
+            setDataEditModal={setDataEditModal}
+            handleClose={handleClose}
+          />
+        </Modal.Body>
+      </Modal>
     </div>
   )
 }

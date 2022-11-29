@@ -42,6 +42,12 @@ function UserCard(props) {
     })
   }
 
+  function handleEdit() {
+
+    props.handleShow()
+    props.setDataEditModal(props.user)
+  }
+
   return (
     <Card style={{ width: '20rem' }}>
       <Card.Body>
@@ -50,7 +56,7 @@ function UserCard(props) {
           <ListGroup.Item><strong>Rol: </strong>{props.user.role}</ListGroup.Item>
           {/* <ListGroup.Item><strong>Contraseña: </strong>{props.user.password}</ListGroup.Item> */}
         </ListGroup>
-        <Button className="btn edit" variant="outline-warning">Editar</Button>
+        <Button className="btn edit" variant="outline-warning" onClick={handleEdit}>Editar</Button>
         <Button className="btn delete" variant="outline-danger" onClick={handleDelete}>Eliminar</Button>
       </Card.Body>
     </Card>
