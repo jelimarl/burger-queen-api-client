@@ -2,15 +2,36 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from "react-bootstrap/Button";
 import Swal from 'sweetalert2';
+import { editUser } from '../utils/petitions';
 
 function EditUserForm(props) {
 
-  function handleChangeEditModal(event) { }
+  function handleChangeEditModal(event) {
+    props.setDataEditModal({
+      ...props.dataEditModal,
+      [event.target.name]: event.target.value
+    })
+  }
 
   function handleSubmitEditModal(event) {
     event.preventDefault()
-    console.log('Editando')
-    props.handleClose()
+
+    editUser(props.dataEditModal)
+      .then((response) => {
+        console.log(response)
+
+        Swal.fire(
+          '¡Guardado!',
+          'El Usuario se ha editado exitosamente.',
+          'success'
+        )
+
+        props.handleClose()
+        props.setUpdateList(!props.updateList)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   return (

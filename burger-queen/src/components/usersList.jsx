@@ -85,6 +85,8 @@ function UsersList() {
             dataEditModal={dataEditModal}
             setDataEditModal={setDataEditModal}
             handleClose={handleClose}
+            setUpdateList={setUpdateList}
+            updateList={updateList}
           />
         </Modal.Body>
       </Modal>

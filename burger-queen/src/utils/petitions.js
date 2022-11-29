@@ -100,4 +100,18 @@ function deleteUser(props) {
   })
 }
 
-export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser, deleteUser }
+function editUser(dataEditModal) {
+  let token = sessionStorage.getItem("accessToken")
+
+  return axios({
+    method: 'patch',
+    url: `${urlAPI}users/${dataEditModal.id}`,
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    },
+    data: dataEditModal
+  })
+}
+
+export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser, deleteUser, editUser }
