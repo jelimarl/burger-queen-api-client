@@ -57,6 +57,8 @@ function UsersList() {
             <div className="productCard" key={index}>
               <UserCard
                 user={user}
+                setUpdateList={setUpdateList}
+                updateList={updateList}
               />
             </div>
 

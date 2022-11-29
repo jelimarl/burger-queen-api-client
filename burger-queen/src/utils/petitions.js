@@ -87,4 +87,17 @@ function saveUser(dataUser) {
   })
 }
 
-export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser }
+function deleteUser(props) {
+  let token = sessionStorage.getItem("accessToken")
+
+  return axios({
+    method: 'delete',
+    url: `${urlAPI}users/${props.user.id}`,
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    }
+  })
+}
+
+export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser, deleteUser }
