@@ -9,6 +9,7 @@ function AddUserForm(props) {
   const [dataUser, setDataUser] = useState({ email: '', password: '', role: '' })
 
   function handleChange(event) {
+
     setDataUser({
       ...dataUser,
       [event.target.name]: event.target.value
@@ -25,7 +26,7 @@ function AddUserForm(props) {
 
         Swal.fire(
           '¡Guardado!',
-          'El Producto se ha creado exitosamente.',
+          'El Usuario se ha creado exitosamente.',
           'success'
         )
 

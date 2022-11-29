@@ -4,6 +4,7 @@ import { UserCard } from "./userCard"
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { AddUserForm } from "./addUserForm";
+import "../styles/productList.css"
 
 function UserList() {
 
@@ -30,7 +31,7 @@ function UserList() {
   }, [updateList])
 
   return (
-    <div>
+    <div className="productList">
 
       <Button variant="secondary" onClick={handleShowAdd}>
         Agregar Usuario
