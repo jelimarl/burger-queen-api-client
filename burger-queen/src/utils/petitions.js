@@ -3,7 +3,17 @@ import axios from 'axios'
 const urlAPI = 'http://localhost:8080/'
 
 function postUserPetition(userEmail, userPassword) {
-  return axios.post(urlAPI + 'login', { email: userEmail, password: userPassword })
+  let token = sessionStorage.getItem("accessToken")
+
+  return axios({
+    method: 'post',
+    url: urlAPI + 'login',
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    },
+    data: { email: userEmail, password: userPassword }
+  })
 }
 
 function getProducts() {

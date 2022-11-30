@@ -6,6 +6,7 @@ import { LoginView } from './views/loginView'
 import { AdminView } from './views/adminView'
 import { AdminViewUsers } from './views/adminViewUsers';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { WaiterView } from './views/waiterView';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<LoginView />} />
           <Route path='/admin-products' element={<AdminView />} />
           <Route path='/admin-users' element={<AdminViewUsers />} />
+          <Route path='/waiter' element={<WaiterView />} />
         </Routes>
       </BrowserRouter>
 

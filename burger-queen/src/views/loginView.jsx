@@ -34,6 +34,9 @@ function LoginView() {
                 if (response.data.user.role === 'admin') {
                     navigating('/admin-products');
                 }
+                else if (response.data.user.role === 'mesero' || response.data.user.role === 'mesera') {
+                    navigating('/waiter')
+                }
             })
             .catch((error) => {
                 console.log(error)
