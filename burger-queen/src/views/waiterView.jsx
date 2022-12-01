@@ -1,14 +1,14 @@
 import React from "react";
 import { HeaderWaiter } from "../components/headerWaiter"
-import { Order } from "../components/orders"
-import '../styles/adminView.css'
+import { Order } from "../components/order"
+
 
 function WaiterView() {
   return (
     <div>
       <HeaderWaiter />
 
-      <div className="adminView">
+      <div className="waiterView">
         <Order />
       </div>
     </div>
