@@ -5,6 +5,10 @@
 .cardImg {
   width: 4.5rem;
   height: 4.5rem;
-  margin-left: 6.6rem;
-  object-fit: cover;
+  margin-left: 4.2rem;
+  object-fit: contain;
+}
+
+.btn {
+  margin-left: 2.8rem;
 }
