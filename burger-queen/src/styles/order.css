@@ -3,3 +3,17 @@
   margin-left: 1rem;
   width: 15rem;
 }
+
+.orderSection {
+  display: flex;
+  flex-direction: row;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  max-height: 5rem;
+}

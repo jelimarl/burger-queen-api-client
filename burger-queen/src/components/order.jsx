@@ -3,12 +3,15 @@ import Form from "react-bootstrap/Form";
 import '../styles/order.css'
 import { getProducts } from "../utils/petitions";
 import { SpecificProductCard } from "./specificProductCard";
+import Table from 'react-bootstrap/Table'
 
 function Order() {
 
   const [completeList, setCompleteList] = useState([])
 
   const [specificList, setSpecificList] = useState([])
+
+  const [selectedItem, setSelectedItem] = useState([])
 
   useEffect(() => {
 
@@ -35,6 +38,8 @@ function Order() {
     console.log(result)
   }
 
+  console.log('Producto Seleccionado', selectedItem)
+
   return (
 
     <div className="orderView">
@@ -47,19 +52,41 @@ function Order() {
         </Form.Select>
       </Form>
 
-      {
-        specificList.map((product, index) => {
+      <section className="orderSection">
+        <section className="products">
+          {
+            specificList.map((product, index) => {
 
-          return (
-            <div key={index}>
-              <SpecificProductCard
-                product={product}
-              />
-            </div>
-          )
-        })
-      }
+              return (
+                <div key={index}>
+                  <SpecificProductCard
+                    product={product}
+                    setSelectedItem={setSelectedItem}
+                    selectedItem={selectedItem}
+                  />
+                </div>
+              )
+            })
+          }
+        </section>
 
+        <Table striped bordered hover>
+          <tbody>
+            {
+              selectedItem.map((item, index) => {
+
+                return (
+                  <tr key={index}>
+                    <td>{item.name}</td>
+                    <td>{item.price}</td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </Table>
+
+      </section>
     </div>
   )
 }

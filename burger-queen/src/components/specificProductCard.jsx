@@ -6,7 +6,9 @@ import Button from "react-bootstrap/Button"
 function SpecificProductCard(props) {
 
   function handleClick() {
-    console.log('Producto seleccionado', props.product.id)
+    console.log('Producto elegido', props.product.id)
+    props.setSelectedItem([...props.selectedItem, props.product])
+
   }
 
   return (
