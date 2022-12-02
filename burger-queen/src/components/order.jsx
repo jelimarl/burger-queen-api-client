@@ -79,6 +79,8 @@ function Order() {
                   <SelectedProductCard
                     item={item}
                     index={index}
+                    setSelectedItem={setSelectedItem}
+                    selectedItem={selectedItem}
                   />
                 </div>
               )

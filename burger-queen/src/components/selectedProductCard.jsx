@@ -7,6 +7,7 @@ function SelectedProductCard(props) {
 
   function handleDelete() {
     console.log('item', props.index)
+    props.setSelectedItem([...props.selectedItem.slice(0, props.index), ...props.selectedItem.slice(props.index + 1)])
   }
 
   return (
