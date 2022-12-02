@@ -5,6 +5,7 @@ import { getProducts } from "../utils/petitions";
 import { SpecificProductCard } from "./specificProductCard";
 import { SelectedProductCard } from "./selectedProductCard";
 import Button from "react-bootstrap/Button";
+import Swal from 'sweetalert2';
 
 function Order() {
 
@@ -62,6 +63,14 @@ function Order() {
     if (selectedItem.length !== 0) {
       console.log('Enviando Pedido')
       setSelectedItem([])
+    }
+
+    else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: '¡Agrega un producto al pedido!'
+      })
     }
 
   }

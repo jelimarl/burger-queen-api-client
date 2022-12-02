@@ -19,7 +19,7 @@
   flex-direction: column;
   margin-top: 1rem;
   margin-left: 22rem;
-  position: fixed;
+  position: absolute;
 }
 
 .form-control {
