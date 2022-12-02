@@ -40,9 +40,17 @@ function Order() {
 
   console.log('Producto Seleccionado', selectedItem)
 
-  return (
+  function purchaseTotal() {
 
-    <div className="orderView">
+    if (selectedItem.length !== 0) {
+      const pricesArray = selectedItem.map((item) => Number(item.price))
+      const total = pricesArray.reduce(function (a, b) { return a + b; })
+      return `$${total}`
+    }
+  }
+
+  return (
+    <div>
 
       <Form className="select-menu">
         <Form.Select onChange={handleChange}>
@@ -70,7 +78,7 @@ function Order() {
           }
         </section>
 
-        <div className="order">
+        <section className="order">
           {
             selectedItem.map((item, index) => {
 
@@ -86,7 +94,9 @@ function Order() {
               )
             })
           }
-        </div>
+
+          <p>{purchaseTotal()}</p>
+        </section>
 
       </section>
     </div>
