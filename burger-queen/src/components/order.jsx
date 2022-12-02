@@ -4,6 +4,7 @@ import '../styles/order.css'
 import { getProducts } from "../utils/petitions";
 import { SpecificProductCard } from "./specificProductCard";
 import { SelectedProductCard } from "./selectedProductCard";
+import Button from "react-bootstrap/Button";
 
 function Order() {
 
@@ -12,6 +13,8 @@ function Order() {
   const [specificList, setSpecificList] = useState([])
 
   const [selectedItem, setSelectedItem] = useState([])
+
+  const [dataOrder, setDataOrder] = useState()
 
   useEffect(() => {
 
@@ -25,7 +28,7 @@ function Order() {
       })
   }, [])
 
-  function handleChange(event) {
+  function handleChangeSelector(event) {
 
     const result = completeList.filter((product) => {
       if (event.target.value === product.type) {
@@ -45,15 +48,29 @@ function Order() {
     if (selectedItem.length !== 0) {
       const pricesArray = selectedItem.map((item) => Number(item.price))
       const total = pricesArray.reduce(function (a, b) { return a + b; })
-      return `$${total}`
+      return `Total: $${total}`
     }
+  }
+
+  function handleChange(event) {
+    console.log(event.target.value)
+  }
+
+  function handleSubmit(event) {
+
+    event.preventDefault()
+    if (selectedItem.length !== 0) {
+      console.log('Enviando Pedido')
+      setSelectedItem([])
+    }
+
   }
 
   return (
     <div>
 
       <Form className="select-menu">
-        <Form.Select onChange={handleChange}>
+        <Form.Select onChange={handleChangeSelector}>
           <option>Escoge un Menú</option>
           <option value='Desayuno'>Desayuno</option>
           <option value='Almuerzo'>Almuerzo</option>
@@ -79,23 +96,42 @@ function Order() {
         </section>
 
         <section className="order">
-          {
-            selectedItem.map((item, index) => {
 
-              return (
-                <div key={index}>
-                  <SelectedProductCard
-                    item={item}
-                    index={index}
-                    setSelectedItem={setSelectedItem}
-                    selectedItem={selectedItem}
-                  />
-                </div>
-              )
-            })
-          }
+          <Form onSubmit={handleSubmit}>
+            <Form.Group>
+              <Form.Control
+                type='text'
+                name='name'
+                placeholder="Nombre del Cliente"
+                // value={dataOrder.name}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group>
+              {
+                selectedItem.map((item, index) => {
 
-          <p>{purchaseTotal()}</p>
+                  return (
+                    <div key={index}>
+                      <SelectedProductCard
+                        item={item}
+                        index={index}
+                        setSelectedItem={setSelectedItem}
+                        selectedItem={selectedItem}
+                      />
+                    </div>
+                  )
+                })
+              }
+            </Form.Group>
+            <Form.Group className="total">
+              <p>{purchaseTotal()}</p>
+            </Form.Group>
+            <Button type='submit'>
+              Enviar a Cocina
+            </Button>
+          </Form>
         </section>
 
       </section>
