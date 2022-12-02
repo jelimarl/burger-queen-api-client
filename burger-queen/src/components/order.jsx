@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import '../styles/order.css'
 import { getProducts } from "../utils/petitions";
 import { SpecificProductCard } from "./specificProductCard";
-import Table from 'react-bootstrap/Table'
+import { SelectedProductCard } from "./selectedProductCard";
 
 function Order() {
 
@@ -70,21 +70,21 @@ function Order() {
           }
         </section>
 
-        <Table striped bordered hover>
-          <tbody>
-            {
-              selectedItem.map((item, index) => {
+        <div className="order">
+          {
+            selectedItem.map((item, index) => {
 
-                return (
-                  <tr key={index}>
-                    <td>{item.name}</td>
-                    <td>{item.price}</td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
-        </Table>
+              return (
+                <div key={index}>
+                  <SelectedProductCard
+                    item={item}
+                    index={index}
+                  />
+                </div>
+              )
+            })
+          }
+        </div>
 
       </section>
     </div>
