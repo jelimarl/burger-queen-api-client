@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { postUserPetition } from "../utils/petitions";
 import '../styles/loginView.css'
+import Form from 'react-bootstrap/Form'
 
 function LoginView() {
 
@@ -57,34 +58,41 @@ function LoginView() {
                 <img src="/burgerQueenBig.jpg" className="logoDesk" alt="Burger logo" />
             </section>
             <section className="formBox">
-                <form className='loginForm' onSubmit={handleSubmit}>
-                    <h2 className="loginTitle">
-                        Inicia Sesión
-                    </h2>
-                    <input
-                        className="emailInput"
-                        type='email'
-                        placeholder="Introduce Email"
-                        name="email"
-                        required
-                        value={userEmail}
-                        onChange={handleChangeEmail}
-                    />
-                    <input
-                        className="passwordInput"
-                        type='password'
-                        placeholder="Introduce Contraseña"
-                        name="password"
-                        required
-                        value={userPassword}
-                        onChange={handleChangePassword}
-                    />
-                    {errorMessage ? (<p id="errorMessage">{errorMessage}</p>) : (null)}
-
-                    <button type="submit" className="loginBtn">
-                        Ingresar
-                    </button>
-                </form>
+                <Form className='loginForm' onSubmit={handleSubmit}>
+                    <Form.Group className="title">
+                        <h2>
+                            Inicia Sesión
+                        </h2>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Control
+                            type='email'
+                            placeholder="Introduce Email"
+                            name="email"
+                            required
+                            value={userEmail}
+                            onChange={handleChangeEmail}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Control
+                            type='password'
+                            placeholder="Introduce Contraseña"
+                            name="password"
+                            required
+                            value={userPassword}
+                            onChange={handleChangePassword}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        {errorMessage ? (<p id="errorMessage">{errorMessage}</p>) : (null)}
+                    </Form.Group>
+                    <div className="d-grid">
+                        <button type="submit" className="loginBtn">
+                            Ingresar
+                        </button>
+                    </div>
+                </Form>
             </section>
         </section>
     )
