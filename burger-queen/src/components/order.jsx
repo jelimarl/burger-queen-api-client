@@ -47,7 +47,7 @@ function Order() {
   function purchaseTotal() {
 
     if (selectedItem.length !== 0) {
-      const pricesArray = selectedItem.map((item) => Number(item.price))
+      const pricesArray = selectedItem.map((item) => Number(item.product.price))
       const total = pricesArray.reduce(function (a, b) { return a + b; })
       return `Total: $${total}`
     }

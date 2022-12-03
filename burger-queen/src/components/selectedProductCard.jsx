@@ -12,8 +12,8 @@ function SelectedProductCard(props) {
 
   return (
     <ListGroup horizontal>
-      <ListGroup.Item className="name">{props.item.name}</ListGroup.Item>
-      <ListGroup.Item className='price'>${props.item.price}</ListGroup.Item>
+      <ListGroup.Item className="name">{props.item.product.name}</ListGroup.Item>
+      <ListGroup.Item className='price'>${props.item.product.price}</ListGroup.Item>
       <ListGroup.Item><Button onClick={handleDelete}>E</Button></ListGroup.Item>
     </ListGroup>
   )

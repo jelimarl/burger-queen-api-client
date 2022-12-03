@@ -7,8 +7,11 @@ function SpecificProductCard(props) {
 
   function handleClick() {
     console.log('Producto elegido', props.product.id)
-    props.setSelectedItem([...props.selectedItem, props.product])
-
+    if (props.selectedItem.map((element) => element.product).includes(props.product)) {
+      console.log('producto repetido')
+    }
+    // props.setSelectedItem([...props.selectedItem, props.product])
+    props.setSelectedItem([...props.selectedItem, { qty: 1, product: props.product }])
   }
 
   return (
