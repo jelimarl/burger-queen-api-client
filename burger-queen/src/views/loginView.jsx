@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { postUserPetition } from "../utils/petitions";
 import '../styles/loginView.css'
 import Form from 'react-bootstrap/Form'
+import Button from "react-bootstrap/Button"
 
 function LoginView() {
 
@@ -66,6 +67,7 @@ function LoginView() {
                     </Form.Group>
                     <Form.Group>
                         <Form.Control
+                            className='emailInput'
                             type='email'
                             placeholder="Introduce Email"
                             name="email"
@@ -87,10 +89,10 @@ function LoginView() {
                     <Form.Group>
                         {errorMessage ? (<p id="errorMessage">{errorMessage}</p>) : (null)}
                     </Form.Group>
-                    <div className="d-grid">
-                        <button type="submit" className="loginBtn">
+                    <div className="d-grid login">
+                        <Button type="submit" className="loginBtn">
                             Ingresar
-                        </button>
+                        </Button>
                     </div>
                 </Form>
             </section>

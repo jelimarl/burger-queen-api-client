@@ -2,16 +2,24 @@ import React from "react"
 import { Card, ListGroup } from "react-bootstrap"
 import '../styles/specificProductCard.css'
 import Button from "react-bootstrap/Button"
+import Swal from 'sweetalert2';
 
 function SpecificProductCard(props) {
 
   function handleClick() {
     console.log('Producto elegido', props.product.id)
-    if (props.selectedItem.map((element) => element.product).includes(props.product)) {
-      console.log('producto repetido')
+    const repeatedItem = props.selectedItem.map((item) => item.product).includes(props.product)
+    if (repeatedItem) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: '¡El producto ya está incluido en el pedido. Puedes modificar la cantidad en la tabla!'
+      })
     }
     // props.setSelectedItem([...props.selectedItem, props.product])
-    props.setSelectedItem([...props.selectedItem, { qty: 1, product: props.product }])
+    else {
+      props.setSelectedItem([...props.selectedItem, { qty: 1, product: props.product }])
+    }
   }
 
   return (
@@ -22,7 +30,7 @@ function SpecificProductCard(props) {
         <ListGroup variant='flush'>
           <ListGroup.Item>${props.product.price}</ListGroup.Item>
         </ListGroup>
-        <Button onClick={handleClick}>Agregar</Button>
+        <Button className="add-item" onClick={handleClick}>Agregar</Button>
       </Card.Body>
     </Card>
   )

@@ -4,4 +4,9 @@
 
 .price {
   width: 4rem;
+  padding-top: 1rem;
+}
+
+.select-btn {
+  margin-top: 0.2rem;
 }

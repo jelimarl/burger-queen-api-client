@@ -41,6 +41,10 @@ h2 {
   text-align: center;
 }
 
+.emailInput {
+  margin-bottom: 1rem;
+}
+
 /*.loginTitle {
   color: rgb(64, 64, 64);
   font-size: 7vw;
@@ -87,26 +91,25 @@ h2 {
   color: rgb(172, 172, 172);
 }*/
 
-.d-grid {
-  margin-top: 2rem;
+.login {
+  margin-top: 1.5rem;
 }
 
-.loginBtn {
+/* .loginBtn {
   height: 2.5rem;
   color: white;
   font-size: 1.6rem;
-  /* font-weight: 600; */
-  border-radius: 0.6rem;
+  font-weight: 600;
   align-items: center;
   background-color: #F0B44C;
   border: white;
   font-family: 'Poppins', sans-serif;
   box-shadow: rgb(0 0 0 / 15%) 0 6px 6px;
-}
+} */
 
-.loginBtn:hover {
+/* .loginBtn:hover {
   background-color: #d78033;
-}
+} */
 
 p {
   font-family: 'Poppins', sans-serif;

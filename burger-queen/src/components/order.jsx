@@ -15,7 +15,7 @@ function Order() {
 
   const [selectedItem, setSelectedItem] = useState([])
 
-  const [dataOrder, setDataOrder] = useState()
+  const [customerName, setCustomerName] = useState('')
 
   useEffect(() => {
 
@@ -55,6 +55,7 @@ function Order() {
 
   function handleChange(event) {
     console.log(event.target.value)
+    setCustomerName(event.target.value)
   }
 
   function handleSubmit(event) {
@@ -63,6 +64,7 @@ function Order() {
     if (selectedItem.length !== 0) {
       console.log('Enviando Pedido')
       setSelectedItem([])
+      setCustomerName('')
     }
 
     else {
@@ -73,6 +75,11 @@ function Order() {
       })
     }
 
+  }
+
+  function handleClick() {
+    setSelectedItem([])
+    setCustomerName('')
   }
 
   return (
@@ -109,10 +116,11 @@ function Order() {
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Control
+                className="nameInput"
                 type='text'
                 name='name'
                 placeholder="Nombre del Cliente"
-                // value={dataOrder.name}
+                value={customerName}
                 onChange={handleChange}
                 required
               />
@@ -137,8 +145,11 @@ function Order() {
             <Form.Group className="total">
               <p>{purchaseTotal()}</p>
             </Form.Group>
-            <Button type='submit'>
+            <Button className="order-btn" type='submit'>
               Enviar a Cocina
+            </Button>
+            <Button onClick={handleClick}>
+              Cancelar Pedido
             </Button>
           </Form>
         </section>
