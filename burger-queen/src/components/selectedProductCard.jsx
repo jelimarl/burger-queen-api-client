@@ -42,8 +42,8 @@ function SelectedProductCard(props) {
   return (
     <ListGroup horizontal>
       <ListGroup.Item className="name">{props.item.product.name}</ListGroup.Item>
+      <ListGroup.Item><Button className='select-btn' onClick={handleDecrease}>-</Button>{props.item.qty}<Button onClick={handleIncrease} className='select-btn'>+</Button></ListGroup.Item>
       <ListGroup.Item className='price'>${props.item.product.price * props.item.qty}</ListGroup.Item>
-      <ListGroup.Item><Button className='select-btn' variant="outline-primary" onClick={handleDecrease}>-</Button>{props.item.qty}<Button onClick={handleIncrease} className='select-btn' variant="outline-primary">+</Button></ListGroup.Item>
       <ListGroup.Item><Button className='delete-btn' variant="outline-danger" onClick={handleDelete}>E</Button></ListGroup.Item>
     </ListGroup>
   )

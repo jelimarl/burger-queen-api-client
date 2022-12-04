@@ -12,6 +12,13 @@
   margin-bottom: 0.5rem;
   border: none;
   font-size: 1.8rem;
+  color: blue;
+  background: white
+}
+
+.select-btn:hover {
+  color: blue;
+  background: white;
 }
 
 .delete-btn {
