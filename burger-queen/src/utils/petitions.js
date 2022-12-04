@@ -124,4 +124,25 @@ function editUser(dataEditModal) {
   })
 }
 
-export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser, deleteUser, editUser }
+function newOrder(customerName, selectedItem) {
+  let token = sessionStorage.getItem("accessToken")
+  let userID = sessionStorage.getItem("userID")
+
+  return axios({
+    method: 'post',
+    url: urlAPI + 'orders',
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    },
+    data: {
+      userId: userID,
+      client: customerName,
+      products: selectedItem,
+      status: "pending",
+      dataEntry: new Date().toLocaleString('sv-SE')
+    }
+  })
+}
+
+export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser, deleteUser, editUser, newOrder }

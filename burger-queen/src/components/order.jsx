@@ -6,6 +6,7 @@ import { SpecificProductCard } from "./specificProductCard";
 import { SelectedProductCard } from "./selectedProductCard";
 import Button from "react-bootstrap/Button";
 import Swal from 'sweetalert2';
+import { newOrder } from "../utils/petitions"
 
 function Order() {
 
@@ -21,7 +22,7 @@ function Order() {
 
     getProducts()
       .then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         setCompleteList(response.data)
       })
       .catch((error) => {
@@ -39,7 +40,7 @@ function Order() {
     })
 
     setSpecificList(result)
-    console.log(result)
+    // console.log(result)
   }
 
   console.log('Producto Seleccionado', selectedItem)
@@ -54,7 +55,7 @@ function Order() {
   }
 
   function handleChange(event) {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setCustomerName(event.target.value)
   }
 
@@ -62,11 +63,24 @@ function Order() {
 
     event.preventDefault()
     if (selectedItem.length !== 0) {
-      console.log('Enviando Pedido')
-      setSelectedItem([])
-      setCustomerName('')
-    }
+      // console.log('Enviando Pedido')
 
+      newOrder(customerName, selectedItem)
+        .then((response) => {
+          console.log(response)
+
+          Swal.fire(
+            '¡Enviado!',
+            'El Pedido se ha enviado exitosamente.',
+            'success'
+          )
+          setSelectedItem([])
+          setCustomerName('')
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
     else {
       Swal.fire({
         icon: 'error',
@@ -74,7 +88,6 @@ function Order() {
         text: '¡Agrega un producto al pedido!'
       })
     }
-
   }
 
   function handleClick() {
@@ -148,7 +161,7 @@ function Order() {
             <Button className="order-btn" type='submit'>
               Enviar a Cocina
             </Button>
-            <Button onClick={handleClick}>
+            <Button variant="outline-danger" onClick={handleClick}>
               Cancelar Pedido
             </Button>
           </Form>
