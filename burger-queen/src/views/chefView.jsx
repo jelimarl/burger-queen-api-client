@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+import { HeaderChef } from "../components/headerChef";
+import { OrderStatusChef } from "../components/orderStatusChef"
 
 function ChefView() {
   return (
-    <div></div>
+    <div>
+      <HeaderChef />
+
+      <div>
+        <OrderStatusChef />
+      </div>
+    </div>
   )
 }
 
