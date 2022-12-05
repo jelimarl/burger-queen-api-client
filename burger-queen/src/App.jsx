@@ -7,6 +7,7 @@ import { AdminView } from './views/adminView'
 import { AdminViewUsers } from './views/adminViewUsers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { WaiterView } from './views/waiterView';
+import { ChefView } from './views/chefView'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
           <Route path='/admin-products' element={<AdminView />} />
           <Route path='/admin-users' element={<AdminViewUsers />} />
           <Route path='/waiter' element={<WaiterView />} />
+          <Route path='/chef' element={<ChefView />} />
         </Routes>
       </BrowserRouter>
 

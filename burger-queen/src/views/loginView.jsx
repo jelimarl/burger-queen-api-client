@@ -40,6 +40,9 @@ function LoginView() {
                 else if (response.data.user.role === 'mesero' || response.data.user.role === 'mesera') {
                     navigating('/waiter')
                 }
+                else if (response.data.user.role === 'chef') {
+                    navigating('/chef')
+                }
             })
             .catch((error) => {
                 console.log(error)

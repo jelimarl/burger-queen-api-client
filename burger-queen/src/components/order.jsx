@@ -162,7 +162,7 @@ function Order() {
               Enviar a Cocina
             </Button>
             <Button variant="outline-danger" onClick={handleClick}>
-              Cancelar Pedido
+              Borrar Pedido
             </Button>
           </Form>
         </section>
