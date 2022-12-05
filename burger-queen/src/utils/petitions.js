@@ -158,4 +158,21 @@ function getOrders() {
   })
 }
 
-export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser, deleteUser, editUser, newOrder, getOrders }
+function editOrder(orderID) {
+  let token = sessionStorage.getItem("accessToken")
+
+  return axios({
+    method: 'patch',
+    url: `${urlAPI}orders/${orderID}`,
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    },
+    data: {
+      status: "ready",
+      dataEntry: new Date().toLocaleString('sv-SE')
+    }
+  })
+}
+
+export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser, deleteUser, editUser, newOrder, getOrders, editOrder }

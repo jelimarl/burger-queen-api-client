@@ -7,6 +7,8 @@ function OrderStatusChef() {
 
   const [orders, setOrders] = useState([])
 
+  const [updateOrders, setUpdateOrders] = useState(false)
+
   useEffect(() => {
 
     getOrders()
@@ -17,7 +19,7 @@ function OrderStatusChef() {
       .catch((error) => {
         console.log(error)
       })
-  }, [])
+  }, [updateOrders])
 
   console.log(orders)
 
@@ -49,6 +51,8 @@ function OrderStatusChef() {
                   <OrderCard
                     order={order}
                     status="Pendiente"
+                    setUpdateOrders={setUpdateOrders}
+                    updateOrders={updateOrders}
                   />
                 </div>
               )
