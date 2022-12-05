@@ -145,4 +145,17 @@ function newOrder(customerName, selectedItem) {
   })
 }
 
-export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser, deleteUser, editUser, newOrder }
+function getOrders() {
+  let token = sessionStorage.getItem("accessToken")
+
+  return axios({
+    method: 'get',
+    url: urlAPI + 'orders',
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${token}`
+    }
+  })
+}
+
+export { postUserPetition, getProducts, saveProduct, deleteProduct, editProduct, getUsers, saveUser, deleteUser, editUser, newOrder, getOrders }
