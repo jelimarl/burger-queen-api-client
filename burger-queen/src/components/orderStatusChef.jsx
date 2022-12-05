@@ -48,6 +48,7 @@ function OrderStatusChef() {
                 <div key={index}>
                   <OrderCard
                     order={order}
+                    status="Pendiente"
                   />
                 </div>
               )

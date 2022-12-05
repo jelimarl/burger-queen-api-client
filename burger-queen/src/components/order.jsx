@@ -91,8 +91,29 @@ function Order() {
   }
 
   function handleClick() {
-    setSelectedItem([])
-    setCustomerName('')
+
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás deshacer esta acción!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '¡Sí, bórralo!',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        setSelectedItem([])
+        setCustomerName('')
+
+        Swal.fire(
+          '¡Borrado!',
+          'El Pedido ha sido borrado exitosamente.',
+          'success'
+        )
+      }
+    })
   }
 
   return (

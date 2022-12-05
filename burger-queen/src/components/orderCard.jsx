@@ -1,5 +1,5 @@
 import React from "react"
-import { Card, ListGroup } from "react-bootstrap"
+import { Button, Card, ListGroup } from "react-bootstrap"
 import '../styles/orderCard.css'
 
 function OrderCard(props) {
@@ -19,8 +19,10 @@ function OrderCard(props) {
               )
             })
           }
+          <ListGroup.Item>Estatus: {props.status}</ListGroup.Item>
           <ListGroup.Item>{props.order.dataEntry}</ListGroup.Item>
         </ListGroup>
+        <Button className="status-chef">Cambiar Estatus</Button>
       </Card.Body>
     </Card>
   )
