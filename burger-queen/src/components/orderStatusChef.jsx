@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { getOrders } from "../utils/petitions";
 import { OrderCard } from "./orderCard"
+import { OrderReadyCard } from "./orderReadyCard"
+import '../styles/orderStatusChef.css'
 
 function OrderStatusChef() {
 
@@ -61,8 +63,37 @@ function OrderStatusChef() {
         </section>
 
         <section className="ready">
-
+          {
+            readyOrders.map((order, index) => {
+              return (
+                <div key={index}>
+                  <OrderReadyCard
+                    order={order}
+                    status="Listo"
+                  />
+                </div>
+              )
+            })
+          }
         </section>
+      </section>
+    )
+  }
+  else {
+    return (
+      <section className="ready">
+        {
+          readyOrders.map((order, index) => {
+            return (
+              <div key={index}>
+                <OrderReadyCard
+                  order={order}
+                  status="Listo"
+                />
+              </div>
+            )
+          })
+        }
       </section>
     )
   }

@@ -1,0 +1,14 @@
+.pending-ready {
+  display: flex;
+  flex-direction: row;
+}
+
+.pending {
+  display: flex;
+  flex-direction: column;
+}
+
+.ready {
+  display: flex;
+  flex-direction: column;
+}
