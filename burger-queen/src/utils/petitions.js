@@ -158,7 +158,7 @@ function getOrders() {
   })
 }
 
-function editOrder(orderID) {
+function editOrder(orderID, orderStatus) {
   let token = sessionStorage.getItem("accessToken")
 
   return axios({
@@ -169,8 +169,8 @@ function editOrder(orderID) {
       'authorization': `Bearer ${token}`
     },
     data: {
-      status: "ready",
-      dataEntry: new Date().toLocaleString('sv-SE')
+      status: orderStatus,
+      newDataEntry: new Date().toLocaleString('sv-SE')
     }
   })
 }

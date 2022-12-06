@@ -48,6 +48,8 @@ function OrderStatusWaiter() {
                   <OrderCardWaiter
                     order={order}
                     status="Listo"
+                    setUpdateOrders={setUpdateOrders}
+                    updateOrders={updateOrders}
                   />
                 </div>
               )

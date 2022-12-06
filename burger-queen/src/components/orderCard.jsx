@@ -8,8 +8,9 @@ function OrderCard(props) {
 
   function handleClick() {
     console.log('Cambiando Estatus ordenID', props.order.id)
+    let orderStatus = 'ready'
 
-    editOrder(props.order.id)
+    editOrder(props.order.id, orderStatus)
       .then((response) => {
         console.log(response)
 
