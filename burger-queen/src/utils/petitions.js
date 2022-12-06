@@ -170,7 +170,7 @@ function editOrder(orderID, orderStatus) {
     },
     data: {
       status: orderStatus,
-      newDataEntry: new Date().toLocaleString('sv-SE')
+      dateProcessed: new Date().toLocaleString('sv-SE')
     }
   })
 }

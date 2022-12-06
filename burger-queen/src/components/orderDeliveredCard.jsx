@@ -19,7 +19,7 @@ function OrderDeliveredCard(props) {
             })
           }
           <ListGroup.Item>Estatus: {props.status}</ListGroup.Item>
-          <ListGroup.Item>{props.order.newDataEntry}</ListGroup.Item>
+          <ListGroup.Item>{props.order.dateProcessed}</ListGroup.Item>
         </ListGroup>
       </Card.Body>
     </Card>
