@@ -14,7 +14,7 @@ function HeaderWaiter() {
         <Container>
           <Nav className="me-auto">
             <Link to="/waiter" className="navLink">Ordenar</Link>
-            <Link to="" className="navLink">Pedidos</Link>
+            <Link to="/waiter-orders" className="navLink">Pedidos</Link>
             <Link to="/" className="navLink logout">Salir</Link>
           </Nav>
         </Container>
