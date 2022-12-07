@@ -37,7 +37,7 @@ function OrderStatusWaiter() {
   console.log('ready', readyOrders)
   console.log('delivered', deliveredOrders)
 
-  if (readyOrders) {
+  if (readyOrders.length !== 0) {
     return (
       <section className="pending-ready">
         <section className="pending">

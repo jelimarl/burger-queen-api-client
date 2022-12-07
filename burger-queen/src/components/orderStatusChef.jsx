@@ -42,7 +42,7 @@ function OrderStatusChef() {
   console.log('pending', pendingOrders)
   console.log('ready', readyOrders)
 
-  if (pendingOrders) {
+  if (pendingOrders.length !== 0) {
     return (
       <section className="pending-ready">
         <section className="pending">
