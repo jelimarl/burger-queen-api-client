@@ -3,6 +3,15 @@ import { Card, ListGroup } from "react-bootstrap"
 import '../styles/orderCard.css'
 
 function OrderReadyCard(props) {
+
+  function orderTime() {
+    const date1 = new Date(props.order.dataEntry)
+    const date2 = new Date(props.order.dateProcessed)
+    let minutes = (date2.getTime() - date1.getTime()) / 1000 / 60
+
+    return Math.round(minutes)
+  }
+
   return (
     <Card style={{ width: '16rem' }}>
       <Card.Body>
@@ -20,8 +29,9 @@ function OrderReadyCard(props) {
             })
           }
           <ListGroup.Item>Estatus: {props.status}</ListGroup.Item>
-          <ListGroup.Item>{props.order.dataEntry}</ListGroup.Item>
-          <ListGroup.Item>{props.order.newDataEntry}</ListGroup.Item>
+          {/* <ListGroup.Item>{props.order.dataEntry}</ListGroup.Item>
+          <ListGroup.Item>{props.order.newDataEntry}</ListGroup.Item> */}
+          <ListGroup.Item>Tardó {orderTime()} min</ListGroup.Item>
         </ListGroup>
       </Card.Body>
     </Card>

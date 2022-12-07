@@ -59,8 +59,8 @@ function LoginView() {
         <section className="loginComponent">
 
             <section className="imgSection">
-                <img src="/burgerQueenThin.jpg" className="logoMobile" alt="Burger logo" />
-                <img src="/burgerQueenBig.jpg" className="logoDesk" alt="Burger logo" />
+                {/* <img src="/burgerQueenThin.jpg" className="logoMobile" alt="Burger logo" />
+                <img src="/burgerQueenBig.jpg" className="logoDesk" alt="Burger logo" /> */}
             </section>
             <section className="formBox">
                 <Form className='loginForm' onSubmit={handleSubmit}>
