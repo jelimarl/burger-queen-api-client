@@ -59,8 +59,8 @@ function LoginView() {
         <section className="loginComponent">
 
             <section className="imgSection">
-                {/* <img src="/burgerQueenThin.jpg" className="logoMobile" alt="Burger logo" />
-                <img src="/burgerQueenBig.jpg" className="logoDesk" alt="Burger logo" /> */}
+                <img src="/burgerQueenThin.jpg" className="logo-vertical" alt="Burger logo" />
+                {/* <img src="/burgerQueenBig.jpg" className="logoDesk" alt="Burger logo" /> */}
             </section>
             <section className="formBox">
                 <Form className='loginForm' onSubmit={handleSubmit}>
@@ -90,11 +90,11 @@ function LoginView() {
                             onChange={handleChangePassword}
                         />
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group className="error-message">
                         {errorMessage ? (<p id="errorMessage">{errorMessage}</p>) : (null)}
                     </Form.Group>
                     <div className="d-grid login">
-                        <Button type="submit" className="loginBtn">
+                        <Button type="submit" bsPrefix="loginBtn">
                             Ingresar
                         </Button>
                     </div>
