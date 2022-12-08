@@ -1,11 +1,11 @@
+:root {
+  --font-family: 'Nunito', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  font-family: 'Poppins', sans-serif;
 }
 
 .loginComponent {
@@ -15,8 +15,6 @@ html {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  /* background-color: #F7CB58; */
-  /* background-color: #FCFFE7; */
   gap: 1rem;
 }
 
@@ -31,31 +29,28 @@ html {
   width: 80%;
 }
 
-/* .logoDesk {
-  display: none;
-} */
-
 .formBox {
   width: 80%;
   padding: 1rem;
-  height: 20rem;
+  height: 22rem;
   border-radius: 1rem;
-  border: 0.2rem solid #F0B44C;
+  border: 0.2rem solid #FFB74D;
 }
 
 .title {
-  margin: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 2rem;
+  font-family: var(--font-family);
 }
 
 h2 {
   text-align: center;
-  font-size: 2rem;
 }
 
 .emailInput {
   margin-top: 2rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.8rem;
+  font-family: var(--font-family);
 }
 
 /* .emailInput {
@@ -99,20 +94,21 @@ h2 {
 } */
 
 .login {
-  margin-top: 1.6rem;
+  margin-top: 2.4rem;
 }
 
 .loginBtn {
   height: 2.5rem;
   color: white;
-  font-size: 1.4rem;
+  font-family: var(--font-family);
+  font-size: 1.5rem;
   font-weight: 600;
   border-radius: 0.375rem;
   align-items: center;
-  background-color: #F7CB58;
+  background-color: #FFB74D;
   border: white;
-  font-family: 'Poppins', sans-serif;
   box-shadow: rgb(0 0 0 / 15%) 0 6px 6px;
+  text-shadow: rgba(0, 0, 0, 0.3) 0 4px 4px;
 }
 
 /* .loginBtn:hover {
@@ -124,6 +120,43 @@ h2 {
 }
 
 p {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-family);
   font-size: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .loginComponent {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .imgSection {
+    height: 25rem;
+    width: 80%;
+  }
+
+  .logo-vertical {
+    width: 90%;
+    height: 25rem;
+  }
+
+  .formBox {
+    width: 75%;
+    height: 24.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .title {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .emailInput {
+    margin-bottom: 2rem;
+  }
+
+  .login {
+    margin-top: 2.6rem;
+  }
 }
