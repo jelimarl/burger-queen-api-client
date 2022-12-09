@@ -3,11 +3,6 @@
   padding: 0;
 }
 
-html,
-body {
-  font-family: 'Poppins', sans-serif;
-}
-
 /* .addProducts {
   width: 70vw;
   height: 10vw;
@@ -27,17 +22,17 @@ body {
   background-color: #d78033;
 }  */
 
-/* .productsList {
-  display: flex;
-  justify-content: center;
-} */
-
 .productsList {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .productCard {
@@ -47,4 +42,10 @@ body {
   width: 20rem;
   height: 25rem; */
   margin: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: auto auto auto;
+  }
 }

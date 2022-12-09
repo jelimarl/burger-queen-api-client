@@ -63,19 +63,18 @@ function AdminView() {
           </Modal.Body>
         </Modal>
 
-        <div>
+        <div className="grid-container">
           {
             list.map((product, index) => (
 
-              <div className="productCard" key={index}>
-                <ProductCard
-                  product={product}
-                  setUpdateList={setUpdateList}
-                  updateList={updateList}
-                  handleShow={handleShow}
-                  setDataEditModal={setDataEditModal}
-                />
-              </div>
+              <ProductCard
+                product={product}
+                key={index}
+                setUpdateList={setUpdateList}
+                updateList={updateList}
+                handleShow={handleShow}
+                setDataEditModal={setDataEditModal}
+              />
             ))
           }
         </div>

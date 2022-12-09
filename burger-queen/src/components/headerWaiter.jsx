@@ -7,9 +7,6 @@ import '../styles/header.css'
 function HeaderWaiter() {
   return (
     <section className="header">
-      {/* <div className="headerImg">
-        <img src="/burger-queen-header.png" className="headerLogoBig" alt="Burger logo" />
-      </div> */}
       <Navbar>
         <Container>
           <Nav className="me-auto">

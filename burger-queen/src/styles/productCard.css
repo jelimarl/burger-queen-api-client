@@ -2,12 +2,12 @@
   padding: 1rem;
 }
 
-.cardImg {
+.cardImg-admin {
   width: 4.5rem;
   height: 4.5rem;
   object-fit: contain;
 }
 
 .delete {
-  margin-left: 6.5rem;
+  margin-left: 2rem;
 }

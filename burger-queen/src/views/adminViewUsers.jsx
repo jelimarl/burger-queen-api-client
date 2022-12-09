@@ -63,20 +63,18 @@ function AdminViewUsers() {
           </Modal.Body>
         </Modal>
 
-        <div>
+        <div className="grid-container">
           {
             list.map((user, index) => (
 
-              <div className="productCard" key={index}>
-                <UserCard
-                  user={user}
-                  setUpdateList={setUpdateList}
-                  updateList={updateList}
-                  handleShow={handleShow}
-                  setDataEditModal={setDataEditModal}
-                />
-              </div>
-
+              <UserCard
+                user={user}
+                key={index}
+                setUpdateList={setUpdateList}
+                updateList={updateList}
+                handleShow={handleShow}
+                setDataEditModal={setDataEditModal}
+              />
             ))
           }
         </div>

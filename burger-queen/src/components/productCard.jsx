@@ -49,20 +49,22 @@ function ProductCard(props) {
   }
 
   return (
-
-    <Card style={{ width: '20rem' }}>
-      <Card.Img variant='top' src={props.product.image} className="cardImg" />
-      <Card.Body>
-        <Card.Title>{props.product.name}</Card.Title>
-        <ListGroup variant="flush">
-          <ListGroup.Item>${props.product.price}</ListGroup.Item>
-          <ListGroup.Item>{props.product.type}</ListGroup.Item>
-        </ListGroup>
-        <Button className="btn edit" variant="outline-warning" onClick={handleEdit}>Editar</Button>
-        <Button className="btn delete" variant="outline-danger" onClick={handleDelete}>Eliminar</Button>
-      </Card.Body>
-    </Card>
-
+    <div className="grid-item">
+      <Card style={{ width: '20rem' }}>
+        <Card.Img variant='top' src={props.product.image} className="cardImg-admin" />
+        <Card.Body>
+          <Card.Title>{props.product.name}</Card.Title>
+          <ListGroup variant="flush">
+            <ListGroup.Item>${props.product.price}</ListGroup.Item>
+            <ListGroup.Item>{props.product.type}</ListGroup.Item>
+          </ListGroup>
+          <ListGroup horizontal>
+            <Button className="btn edit" variant="outline-warning" onClick={handleEdit}>Editar</Button>
+            <Button className="btn delete" variant="outline-danger" onClick={handleDelete}>Eliminar</Button>
+          </ListGroup>
+        </Card.Body>
+      </Card>
+    </div>
   )
 }
 
