@@ -4,7 +4,7 @@ import { UserCard } from "./userCard"
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { AddUserForm } from "./addUserForm";
-import "../styles/productsList.css"
+import "../styles/adminView.css"
 import { EditUserForm } from "./editUserForm";
 
 function UsersList() {

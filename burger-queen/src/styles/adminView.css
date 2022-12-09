@@ -8,13 +8,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.adminView {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 /* .addProducts {
   width: 70vw;
   height: 10vw;
@@ -38,3 +31,20 @@ body {
   display: flex;
   justify-content: center;
 } */
+
+.productsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.productCard {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 25rem; */
+  margin: 1rem;
+}
