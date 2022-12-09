@@ -50,32 +50,34 @@ function ChefView() {
 
         <section className="pending-ready">
           <section className="pending">
+            <h2 className="pending-title">Pedidos Pendientes</h2>
             {
               pendingOrders.map((order, index) => {
                 return (
-                  <div key={index}>
-                    <OrderCard
-                      order={order}
-                      status="Pendiente"
-                      setUpdateOrders={setUpdateOrders}
-                      updateOrders={updateOrders}
-                    />
-                  </div>
+
+                  <OrderCard
+                    order={order}
+                    key={index}
+                    status="Pendiente"
+                    setUpdateOrders={setUpdateOrders}
+                    updateOrders={updateOrders}
+                  />
                 )
               })
             }
           </section>
 
-          <section className="ready">
+          <section className="pending">
+            <h2 className="pending-title">Pedidos Listos</h2>
             {
               readyOrders.map((order, index) => {
                 return (
-                  <div key={index}>
-                    <OrderReadyCard
-                      order={order}
-                      status="Listo"
-                    />
-                  </div>
+
+                  <OrderReadyCard
+                    order={order}
+                    key={index}
+                    status="Listo"
+                  />
                 )
               })
             }
@@ -89,19 +91,22 @@ function ChefView() {
       <div>
         <HeaderChef />
 
-        <section className="ready">
-          {
-            readyOrders.map((order, index) => {
-              return (
-                <div key={index}>
+        <section className="only-ready">
+          <h2 className="pending-title">Pedidos Listos</h2>
+          <div className="grid-container-orders">
+            {
+              readyOrders.map((order, index) => {
+                return (
+
                   <OrderReadyCard
                     order={order}
+                    key={index}
                     status="Listo"
                   />
-                </div>
-              )
-            })
-          }
+                )
+              })
+            }
+          </div>
         </section>
       </div>
     )

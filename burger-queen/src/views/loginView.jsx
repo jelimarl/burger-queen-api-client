@@ -65,7 +65,7 @@ function LoginView() {
             <section className="formBox">
                 <Form className='loginForm' onSubmit={handleSubmit}>
                     <Form.Group className="title">
-                        <h2>
+                        <h2 className="login-title">
                             Inicia Sesión
                         </h2>
                     </Form.Group>

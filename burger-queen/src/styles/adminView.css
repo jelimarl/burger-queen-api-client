@@ -33,6 +33,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
+  margin-top: 1rem;
 }
 
 .productCard {
@@ -44,8 +45,8 @@
   margin: 1rem;
 }
 
-/* @media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .grid-container {
-    grid-template-columns: auto auto auto;
+    gap: 4rem;
   }
-} */
+}

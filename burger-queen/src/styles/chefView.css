@@ -1,6 +1,19 @@
+:root {
+  --font-family: 'Nunito', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .pending-ready {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
 }
 
 .pending {
@@ -8,7 +21,30 @@
   flex-direction: column;
 }
 
-.ready {
+.pending-title {
+  text-align: center;
+  font-family: var(--font-family);
+}
+
+.only-ready {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.grid-container-orders {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .pending-ready {
+    gap: 5rem;
+  }
+
+  .grid-container-orders {
+    grid-template-columns: auto auto auto;
+  }
 }

@@ -45,32 +45,34 @@ function WaiterViewStatusOrders() {
 
         <section className="pending-ready">
           <section className="pending">
+            <h2 className="pending-title">Pedidos Listos</h2>
             {
               readyOrders.map((order, index) => {
                 return (
-                  <div key={index}>
-                    <OrderCardWaiter
-                      order={order}
-                      status="Listo"
-                      setUpdateOrders={setUpdateOrders}
-                      updateOrders={updateOrders}
-                    />
-                  </div>
+
+                  <OrderCardWaiter
+                    order={order}
+                    key={index}
+                    status="Listo"
+                    setUpdateOrders={setUpdateOrders}
+                    updateOrders={updateOrders}
+                  />
                 )
               })
             }
           </section>
 
-          <section className="ready">
+          <section className="pending">
+            <h2 className="pending-title">Pedidos Entregados</h2>
             {
               deliveredOrders.map((order, index) => {
                 return (
-                  <div key={index}>
-                    <OrderDeliveredCard
-                      order={order}
-                      status="Entregado"
-                    />
-                  </div>
+
+                  <OrderDeliveredCard
+                    order={order}
+                    key={index}
+                    status="Entregado"
+                  />
                 )
               })
             }
@@ -84,19 +86,22 @@ function WaiterViewStatusOrders() {
       <div>
         <HeaderWaiter />
 
-        <section className="ready">
-          {
-            deliveredOrders.map((order, index) => {
-              return (
-                <div key={index}>
+        <section className="only-ready">
+          <h2 className="pending-title">Pedidos Entregados</h2>
+          <div className="grid-container-orders">
+            {
+              deliveredOrders.map((order, index) => {
+                return (
+
                   <OrderDeliveredCard
                     order={order}
+                    key={index}
                     status="Entregado"
                   />
-                </div>
-              )
-            })
-          }
+                )
+              })
+            }
+          </div>
         </section>
       </div>
     )
