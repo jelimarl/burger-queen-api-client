@@ -23,20 +23,19 @@
 }
 
 .order-link {
-  margin-right: 12rem;
+  margin-right: 8.5rem;
 }
 
 .logout-waiter {
-  margin-left: 14.5rem;
+  margin-left: 9rem;
 }
 
 .products-link {
-  margin-right: 10.5rem;
-  margin-left: 1rem;
+  margin-right: 7rem;
 }
 
 .logout-admin {
-  margin-left: 14rem;
+  margin-left: 8.5rem;
 }
 
 @media screen and (min-width: 1024px) {
