@@ -13,9 +13,9 @@ function HeaderWaiter() {
       <Navbar>
         <Container>
           <Nav className="me-auto">
-            <Link to="/waiter" className="navLink">Ordenar</Link>
+            <Link to="/waiter" className="navLink order-link">Ordenar</Link>
             <Link to="/waiter-orders" className="navLink">Pedidos</Link>
-            <Link to="/" className="navLink logout">Salir</Link>
+            <Link to="/" className="navLink logout-waiter">Salir</Link>
           </Nav>
         </Container>
       </Navbar>

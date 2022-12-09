@@ -11,7 +11,7 @@ function HeaderChef() {
       <Navbar>
         <Container>
           <Nav className="me-auto">
-            <Link to="/" className="navLink logout">Salir</Link>
+            <Link to="/" className="navLink logout-chef">Salir</Link>
           </Nav>
         </Container>
       </Navbar>
