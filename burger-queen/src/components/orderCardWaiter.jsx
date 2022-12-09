@@ -42,7 +42,7 @@ function OrderCardWaiter(props) {
             })
           }
           <ListGroup.Item>Estatus: {props.status}</ListGroup.Item>
-          <ListGroup.Item>{props.order.newDataEntry}</ListGroup.Item>
+          <ListGroup.Item>{props.order.dateProcessed}</ListGroup.Item>
         </ListGroup>
         <Button className='status-chef' onClick={handleClick}>Cambiar Estatus</Button>
       </Card.Body>
