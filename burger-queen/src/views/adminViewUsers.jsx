@@ -47,7 +47,7 @@ function AdminViewUsers() {
       <div className="productsList">
 
         <Button variant="outline-secondary" onClick={handleShowAdd}>
-          Agregar Usuario
+          <strong>Agregar Usuario</strong>
         </Button>
 
         <Modal show={showAdd} onHide={handleCloseAdd}>

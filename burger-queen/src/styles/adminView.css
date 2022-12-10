@@ -34,6 +34,7 @@
   display: grid;
   grid-template-columns: auto auto;
   margin-top: 1rem;
+  gap: 1rem;
 }
 
 .productCard {

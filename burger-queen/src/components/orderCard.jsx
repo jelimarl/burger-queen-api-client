@@ -47,7 +47,7 @@ function OrderCard(props) {
           <ListGroup.Item>Estatus: {props.status}</ListGroup.Item>
           <ListGroup.Item>{props.order.dataEntry}</ListGroup.Item>
         </ListGroup>
-        <Button className="status-chef" onClick={handleClick}>Cambiar Estatus</Button>
+        <Button variant="outline-secondary" className="status-chef" onClick={handleClick}><strong>Cambiar Estatus</strong></Button>
       </Card.Body>
     </Card>
   )

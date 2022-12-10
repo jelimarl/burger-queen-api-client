@@ -1,12 +1,18 @@
-.select-menu {
-  margin-top: 1rem;
-  margin-left: 1rem;
-  width: 15rem;
+:root {
+  --font-family: 'Nunito', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .orderSection {
   display: flex;
   flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .products {
@@ -14,12 +20,21 @@
   flex-direction: column;
 }
 
+.select-menu {
+  margin-top: 2rem;
+  width: 15rem;
+}
+
 .order {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
-  margin-left: 17rem;
-  position: absolute;
+}
+
+.order-title {
+  margin-top: 1rem;
+  font-family: var(--font-family);
+  text-align: center;
 }
 
 .nameInput {
@@ -28,8 +43,23 @@
 
 .total {
   margin-top: 1rem;
+  font-weight: 500;
 }
 
-.order-btn {
-  margin-right: 8.8rem;
+.total-message {
+  /* font-family: var(--font-family); */
+  font-size: 1.4rem;
+}
+
+.order-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .orderSection {
+    gap: 8rem;
+  }
 }

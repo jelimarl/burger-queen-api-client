@@ -33,7 +33,7 @@ function SpecificProductCard(props) {
         <ListGroup variant='flush'>
           <ListGroup.Item>${props.product.price}</ListGroup.Item>
         </ListGroup>
-        <Button className="add-item" onClick={handleClick}>Agregar</Button>
+        <Button variant="outline-secondary" className="add-item" onClick={handleClick}><strong>Agregar</strong></Button>
       </Card.Body>
     </Card>
   )

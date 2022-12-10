@@ -118,22 +118,19 @@ function WaiterView() {
   }
 
   return (
-
     <div>
       <HeaderWaiter />
 
-
-
-      <Form className="select-menu">
-        <Form.Select onChange={handleChangeSelector}>
-          <option>Escoge un Menú</option>
-          <option value='Desayuno'>Desayuno</option>
-          <option value='Almuerzo'>Almuerzo</option>
-        </Form.Select>
-      </Form>
-
       <section className="orderSection">
+
         <section className="products">
+          <Form className="select-menu">
+            <Form.Select onChange={handleChangeSelector}>
+              <option>Escoge un Menú</option>
+              <option value='Desayuno'>Desayuno</option>
+              <option value='Almuerzo'>Almuerzo</option>
+            </Form.Select>
+          </Form>
           {
             specificList.map((product, index) => {
 
@@ -151,6 +148,7 @@ function WaiterView() {
         </section>
 
         <section className="order">
+          <h3 className="order-title">Pedido</h3>
 
           <Form onSubmit={handleSubmit}>
             <Form.Group>
@@ -182,14 +180,16 @@ function WaiterView() {
               }
             </Form.Group>
             <Form.Group className="total">
-              <p>{purchaseTotal()}</p>
+              <p className="total-message">{purchaseTotal()}</p>
             </Form.Group>
-            <Button className="order-btn" type='submit'>
-              Enviar a Cocina
-            </Button>
-            <Button variant="outline-danger" onClick={handleClick}>
-              Borrar Pedido
-            </Button>
+            <div className="order-buttons">
+              <Button variant="outline-secondary" type='submit'>
+                <strong>Enviar a Cocina</strong>
+              </Button>
+              <Button variant="outline-danger" onClick={handleClick}>
+                Borrar Pedido
+              </Button>
+            </div>
           </Form>
         </section>
 
