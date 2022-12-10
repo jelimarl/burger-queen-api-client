@@ -2,6 +2,7 @@ import React from "react"
 import { ListGroup } from "react-bootstrap"
 import '../styles/selectedProductCard.css'
 import Button from "react-bootstrap/Button"
+import { FaTrashAlt } from "react-icons/fa";
 
 function SelectedProductCard(props) {
 
@@ -44,7 +45,7 @@ function SelectedProductCard(props) {
       <ListGroup.Item className="name">{props.item.product.name}</ListGroup.Item>
       <ListGroup.Item><Button className='select-btn' onClick={handleDecrease}>-</Button>{props.item.qty}<Button onClick={handleIncrease} className='select-btn'>+</Button></ListGroup.Item>
       <ListGroup.Item className='price'>${props.item.product.price * props.item.qty}</ListGroup.Item>
-      <ListGroup.Item><Button className='delete-btn' variant="outline-danger" onClick={handleDelete}>E</Button></ListGroup.Item>
+      <ListGroup.Item><Button className='delete-btn' variant="danger" onClick={handleDelete}><FaTrashAlt /></Button></ListGroup.Item>
     </ListGroup>
   )
 }

@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card"
 import ListGroup from "react-bootstrap/ListGroup"
 import { deleteUser } from "../utils/petitions"
 import Swal from 'sweetalert2';
+import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 
 
 function UserCard(props) {
@@ -50,15 +51,16 @@ function UserCard(props) {
 
   return (
     <div className="grid-item">
-      <Card style={{ width: '20rem' }}>
+      <Card style={{ width: '20rem' }} bg="light">
         <Card.Body>
           <Card.Title>{props.user.email}</Card.Title>
-          <ListGroup variant="flush">
-            <ListGroup.Item><strong>Rol: </strong>{props.user.role}</ListGroup.Item>
-            {/* <ListGroup.Item><strong>Contraseña: </strong>{props.user.password}</ListGroup.Item> */}
-          </ListGroup>
-          <Button className="btn edit" variant="outline-secondary" onClick={handleEdit}>Editar</Button>
-          <Button className="btn delete" variant="outline-danger" onClick={handleDelete}>Eliminar</Button>
+          {/* <ListGroup variant="flush"> */}
+          <Card.Text><strong>Rol: </strong>{props.user.role}</Card.Text>
+          {/* </ListGroup> */}
+          <div className="product-buttons">
+            <Button className="btn edit" variant="outline-secondary" onClick={handleEdit}><FaPencilAlt /></Button>
+            <Button className="btn delete" variant="outline-danger" onClick={handleDelete}><FaTrashAlt /></Button>
+          </div>
         </Card.Body>
       </Card>
     </div>

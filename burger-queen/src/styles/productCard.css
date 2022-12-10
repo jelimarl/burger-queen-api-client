@@ -8,6 +8,8 @@
   object-fit: contain;
 }
 
-.delete {
-  margin-left: 2rem;
+.product-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

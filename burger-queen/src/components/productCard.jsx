@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button"
 import "../styles/productCard.css"
 import { deleteProduct } from "../utils/petitions"
 import Swal from 'sweetalert2';
+import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 
 function ProductCard(props) {
   // console.log('props', props)
@@ -58,10 +59,10 @@ function ProductCard(props) {
             <ListGroup.Item>${props.product.price}</ListGroup.Item>
             <ListGroup.Item>{props.product.type}</ListGroup.Item>
           </ListGroup>
-          <ListGroup horizontal>
-            <Button className="btn edit" variant="outline-secondary" onClick={handleEdit}>Editar</Button>
-            <Button className="btn delete" variant="outline-danger" onClick={handleDelete}>Eliminar</Button>
-          </ListGroup>
+          <div className="product-buttons">
+            <Button className="btn edit" variant="outline-secondary" onClick={handleEdit}><FaPencilAlt /></Button>
+            <Button className="btn delete" variant="outline-danger" onClick={handleDelete}><FaTrashAlt /></Button>
+          </div>
         </Card.Body>
       </Card>
     </div>

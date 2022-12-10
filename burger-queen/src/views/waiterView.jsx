@@ -187,7 +187,7 @@ function WaiterView() {
                 <strong>Enviar a Cocina</strong>
               </Button>
               <Button variant="outline-danger" onClick={handleClick}>
-                Borrar Pedido
+                <strong>Borrar Pedido</strong>
               </Button>
             </div>
           </Form>
