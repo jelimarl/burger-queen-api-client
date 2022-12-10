@@ -10,8 +10,10 @@ function HeaderChef() {
     <section className="header">
       <Navbar>
         <Container>
-          <Nav className="me-auto">
-            <Link to="/" className="navLink logout-chef">Salir</Link>
+          <Nav>
+          </Nav>
+          <Nav>
+            <Link to="/" className="navLink">Salir</Link>
           </Nav>
         </Container>
       </Navbar>

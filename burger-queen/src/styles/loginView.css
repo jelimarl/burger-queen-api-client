@@ -136,6 +136,7 @@ p {
   .imgSection {
     height: 25rem;
     width: 80%;
+    padding-left: 0.5rem;
   }
 
   .logo-vertical {
