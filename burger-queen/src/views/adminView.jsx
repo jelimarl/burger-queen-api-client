@@ -46,7 +46,7 @@ function AdminView() {
 
       <div className="productsList">
 
-        <Button variant="secondary" onClick={handleShowAdd}>
+        <Button variant="outline-secondary" onClick={handleShowAdd}>
           Agregar Producto
         </Button>
 

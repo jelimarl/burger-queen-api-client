@@ -50,14 +50,14 @@ function UserCard(props) {
 
   return (
     <div className="grid-item">
-      <Card style={{ width: '20rem' }}>
+      <Card style={{ width: '20rem' }} border="warning">
         <Card.Body>
           <Card.Title>{props.user.email}</Card.Title>
           <ListGroup variant="flush">
             <ListGroup.Item><strong>Rol: </strong>{props.user.role}</ListGroup.Item>
             {/* <ListGroup.Item><strong>Contraseña: </strong>{props.user.password}</ListGroup.Item> */}
           </ListGroup>
-          <Button className="btn edit" variant="outline-warning" onClick={handleEdit}>Editar</Button>
+          <Button className="btn edit" variant="outline-primary" onClick={handleEdit}>Editar</Button>
           <Button className="btn delete" variant="outline-danger" onClick={handleDelete}>Eliminar</Button>
         </Card.Body>
       </Card>
