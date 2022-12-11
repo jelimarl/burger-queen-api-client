@@ -34,6 +34,12 @@ function UserCard(props) {
           })
           .catch((error) => {
             console.log(error)
+
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: '¡No se pudo eliminar el usuario!',
+            })
           })
       }
     })
