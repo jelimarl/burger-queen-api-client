@@ -82,7 +82,7 @@ function WaiterViewStatusOrders() {
         <HeaderWaiter />
 
         <section className="only-ready">
-          <h2 className="pending-title">Pedidos Entregados</h2>
+          <h2 className="pending-title">Solo hay Pedidos Entregados</h2>
           <div className="grid-container-orders">
             {
               deliveredOrders.map((order, index) => {

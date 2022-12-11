@@ -105,12 +105,6 @@ function WaiterView() {
 
         setSelectedItem([])
         setCustomerName('')
-
-        Swal.fire(
-          '¡Borrado!',
-          'El Pedido ha sido borrado exitosamente.',
-          'success'
-        )
       }
     })
   }

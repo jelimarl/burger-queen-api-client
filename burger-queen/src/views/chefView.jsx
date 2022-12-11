@@ -85,7 +85,7 @@ function ChefView() {
         <HeaderChef />
 
         <section className="only-ready">
-          <h2 className="pending-title">Pedidos Listos</h2>
+          <h2 className="pending-title">Solo hay Pedidos Listos</h2>
           <div className="grid-container-orders">
             {
               readyOrders.map((order, index) => {
