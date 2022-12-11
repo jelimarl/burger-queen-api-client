@@ -72,6 +72,12 @@ function WaiterView() {
         })
         .catch((error) => {
           console.log(error)
+
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '¡No se pudo enviar el pedido!',
+          })
         })
     }
     else {

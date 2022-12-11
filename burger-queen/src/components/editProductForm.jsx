@@ -31,6 +31,12 @@ function EditProductForm(props) {
       })
       .catch((error) => {
         console.log(error)
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '¡No se pudo editar el producto!',
+        })
       })
   }
 

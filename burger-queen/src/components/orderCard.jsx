@@ -22,6 +22,12 @@ function OrderCard(props) {
       })
       .catch((error) => {
         console.log(error)
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '¡No se pudo cambiar el estatus!',
+        })
       })
   }
 

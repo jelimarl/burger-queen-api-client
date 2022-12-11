@@ -33,6 +33,12 @@ function AddProductForm(props) {
       })
       .catch((error) => {
         console.log(error)
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: '¡No se pudo crear el producto!',
+        })
       })
   }
 
