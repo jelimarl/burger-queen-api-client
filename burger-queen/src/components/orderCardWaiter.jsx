@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 function OrderCardWaiter(props) {
 
   function handleClick() {
-    console.log('Cambiando estatus id', props.order.id)
     let orderStatus = 'delivered'
 
     editOrder(props.order.id, orderStatus)

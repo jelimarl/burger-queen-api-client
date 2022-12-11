@@ -3,25 +3,6 @@
   padding: 0;
 }
 
-/* .addProducts {
-  width: 70vw;
-  height: 10vw;
-  color: white;
-  margin-top: 10vw;
-  font-size: 4.5vw;
-  font-weight: 500;
-  border-radius: 5vw;
-  align-items: center;
-  background-color: #F0B44C;
-  border: white;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: rgb(0 0 0 / 15%) 0 3px 4px;
-}
-
-.addProducts:hover {
-  background-color: #d78033;
-}  */
-
 .productsList {
   display: flex;
   flex-direction: column;
@@ -38,11 +19,6 @@
 }
 
 .productCard {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20rem;
-  height: 25rem; */
   margin: 1rem;
 }
 

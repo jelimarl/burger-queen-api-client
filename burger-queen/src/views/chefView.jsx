@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getOrders } from "../utils/petitions";
 import { OrderCard } from "../components/orderCard"
 import { OrderReadyCard } from "../components/orderReadyCard"
@@ -16,15 +15,12 @@ function ChefView() {
 
     getOrders()
       .then((response) => {
-        console.log(response)
         setOrders(response.data)
       })
       .catch((error) => {
         console.log(error)
       })
   }, [updateOrders])
-
-  console.log(orders)
 
   const pendingOrders = orders.filter((order) => {
     if (order.status === "pending") {
@@ -39,9 +35,6 @@ function ChefView() {
     }
     return false
   })
-
-  console.log('pending', pendingOrders)
-  console.log('ready', readyOrders)
 
   if (pendingOrders.length !== 0) {
     return (

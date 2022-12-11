@@ -2,8 +2,7 @@ import { Header } from "../components/header"
 import React, { useEffect, useState } from "react"
 import { getUsers } from "../utils/petitions"
 import { UserCard } from "../components/userCard"
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import { Button, Modal } from "react-bootstrap";
 import { AddUserForm } from "../components/addUserForm";
 import "../styles/adminView.css"
 import { EditUserForm } from "../components/editUserForm";
@@ -30,9 +29,7 @@ function AdminViewUsers() {
 
     getUsers()
       .then((response) => {
-        // console.log(response)
         setList(response.data)
-        console.log(response.data)
       })
       .catch((error) => {
         console.log(error)

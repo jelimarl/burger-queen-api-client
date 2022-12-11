@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react"
 import { getProducts } from "../utils/petitions"
 import { ProductCard } from "../components/productCard"
 import "../styles/adminView.css"
-import Modal from "react-bootstrap/Modal"
+import { Modal, Button } from "react-bootstrap"
 import { EditProductForm } from "../components/editProductForm"
-import Button from "react-bootstrap/Button";
 import { AddProductForm } from "../components/addProductForm"
 import { Header } from "../components/header"
 
@@ -31,14 +30,11 @@ function AdminView() {
     getProducts()
       .then((response) => {
         setList(response.data)
-        console.log(response.data)
       })
       .catch((error) => {
         console.log(error)
       })
   }, [updateList])
-
-  // console.log(dataEditModal)
 
   return (
     <div>

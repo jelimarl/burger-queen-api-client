@@ -1,16 +1,12 @@
 import React from "react"
-import Button from "react-bootstrap/Button"
-import Card from "react-bootstrap/Card"
-import ListGroup from "react-bootstrap/ListGroup"
+import { Card, Button } from "react-bootstrap"
 import { deleteUser } from "../utils/petitions"
 import Swal from 'sweetalert2';
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 
-
 function UserCard(props) {
 
   function handleDelete() {
-    console.log('Delete id', props.user.id)
 
     Swal.fire({
       title: '¿Estás seguro?',
@@ -54,9 +50,7 @@ function UserCard(props) {
       <Card style={{ width: '20rem' }} bg="light">
         <Card.Body>
           <Card.Title>{props.user.email}</Card.Title>
-          {/* <ListGroup variant="flush"> */}
           <Card.Text><strong>Rol: </strong>{props.user.role}</Card.Text>
-          {/* </ListGroup> */}
           <div className="product-buttons">
             <Button className="btn edit" variant="outline-secondary" onClick={handleEdit}><FaPencilAlt /></Button>
             <Button className="btn delete" variant="outline-danger" onClick={handleDelete}><FaTrashAlt /></Button>

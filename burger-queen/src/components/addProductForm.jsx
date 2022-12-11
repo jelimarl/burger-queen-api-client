@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from "react-bootstrap/Button";
+import { Form, Button } from 'react-bootstrap'
 import '../styles/addProductForm.css'
 import { saveProduct } from '../utils/petitions';
 import Swal from 'sweetalert2';
 
 function AddProductForm(props) {
-
-  // console.log('PROPS ADD', props)
 
   const [dataProduct, setDataProduct] = useState({ name: '', price: '', image: '', type: '' })
 

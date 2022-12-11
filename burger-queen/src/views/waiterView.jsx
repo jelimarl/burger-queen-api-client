@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Form from "react-bootstrap/Form";
+import { Form, Button } from "react-bootstrap";
 import '../styles/waiterView.css'
-import { getProducts } from "../utils/petitions";
+import { getProducts, newOrder } from "../utils/petitions";
 import { SpecificProductCard } from "../components/specificProductCard";
 import { SelectedProductCard } from "../components/selectedProductCard";
-import Button from "react-bootstrap/Button";
 import Swal from 'sweetalert2';
-import { newOrder } from "../utils/petitions"
 import { HeaderWaiter } from "../components/headerWaiter";
 
 function WaiterView() {
@@ -23,7 +21,6 @@ function WaiterView() {
 
     getProducts()
       .then((response) => {
-        // console.log(response.data)
         setCompleteList(response.data)
       })
       .catch((error) => {
@@ -33,18 +30,15 @@ function WaiterView() {
 
   function handleChangeSelector(event) {
 
-    const result = completeList.filter((product) => {
+    const filterResult = completeList.filter((product) => {
       if (event.target.value === product.type) {
         return true
       }
       return false
     })
 
-    setSpecificList(result)
-    // console.log(result)
+    setSpecificList(filterResult)
   }
-
-  console.log('Producto Seleccionado', selectedItem)
 
   function purchaseTotal() {
 
@@ -56,7 +50,6 @@ function WaiterView() {
   }
 
   function handleChange(event) {
-    // console.log(event.target.value)
     setCustomerName(event.target.value)
   }
 
@@ -64,7 +57,6 @@ function WaiterView() {
 
     event.preventDefault()
     if (selectedItem.length !== 0) {
-      // console.log('Enviando Pedido')
 
       newOrder(customerName, selectedItem)
         .then((response) => {

@@ -1,12 +1,10 @@
 import React from "react"
-import { Card, ListGroup } from "react-bootstrap"
+import { Card, ListGroup, Button } from "react-bootstrap"
 import '../styles/specificProductCard.css'
-import Button from "react-bootstrap/Button"
 
 function SpecificProductCard(props) {
 
   function handleClick() {
-    console.log('Producto elegido', props.product.id)
     const repeatedItem = props.selectedItem.map((item) => item.product).includes(props.product)
 
     if (repeatedItem) {

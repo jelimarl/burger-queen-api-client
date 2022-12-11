@@ -1,7 +1,6 @@
 import React from "react"
-import { ListGroup } from "react-bootstrap"
+import { ListGroup, Button } from "react-bootstrap"
 import '../styles/selectedProductCard.css'
-import Button from "react-bootstrap/Button"
 import { FaTrashAlt } from "react-icons/fa";
 
 function SelectedProductCard(props) {
@@ -36,7 +35,6 @@ function SelectedProductCard(props) {
   }
 
   function handleDelete() {
-    console.log('item', props.index)
     props.setSelectedItem([...props.selectedItem.slice(0, props.index), ...props.selectedItem.slice(props.index + 1)])
   }
 

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { postUserPetition } from "../utils/petitions";
 import '../styles/loginView.css'
-import Form from 'react-bootstrap/Form'
-import Button from "react-bootstrap/Button"
+import { Form, Button } from 'react-bootstrap'
 
 function LoginView() {
 
@@ -31,7 +30,6 @@ function LoginView() {
             .then((response) => {
                 window.sessionStorage.setItem("accessToken", response.data.accessToken);
                 window.sessionStorage.setItem("userID", response.data.user.id)
-                console.log(response)
                 setErrorMessage(null)
 
                 if (response.data.user.role === 'admin') {
@@ -45,7 +43,6 @@ function LoginView() {
                 }
             })
             .catch((error) => {
-                console.log(error)
                 if (error.response.data === 'Incorrect password') {
                     setErrorMessage('Contraseña incorrecta')
                 }
@@ -60,7 +57,6 @@ function LoginView() {
 
             <section className="imgSection">
                 <img src="/burgerQueenThin.jpg" className="logo-vertical" alt="Burger logo" />
-                {/* <img src="/burgerQueenBig.jpg" className="logoDesk" alt="Burger logo" /> */}
             </section>
             <section className="formBox">
                 <Form className='loginForm' onSubmit={handleSubmit}>

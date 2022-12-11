@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getOrders } from "../utils/petitions";
 import { OrderCardWaiter } from "../components/orderCardWaiter";
 import { OrderDeliveredCard } from "../components/orderDeliveredCard";
@@ -13,7 +12,6 @@ function WaiterViewStatusOrders() {
 
     getOrders()
       .then((response) => {
-        console.log(response.data)
         setOrders(response.data)
       })
       .catch((error) => {
@@ -34,9 +32,6 @@ function WaiterViewStatusOrders() {
     }
     return false
   })
-
-  console.log('ready', readyOrders)
-  console.log('delivered', deliveredOrders)
 
   if (readyOrders.length !== 0) {
     return (

@@ -1,16 +1,13 @@
 import React from "react"
-import { Card, ListGroup } from "react-bootstrap"
-import Button from "react-bootstrap/Button"
+import { Card, ListGroup, Button } from "react-bootstrap"
 import "../styles/productCard.css"
 import { deleteProduct } from "../utils/petitions"
 import Swal from 'sweetalert2';
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 
 function ProductCard(props) {
-  // console.log('props', props)
 
   function handleDelete() {
-    console.log(props.product.id)
 
     Swal.fire({
       title: '¿Estás seguro?',

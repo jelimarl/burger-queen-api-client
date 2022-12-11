@@ -31,8 +31,6 @@ function OrderReadyCard(props) {
         }
         <ListGroup>
           <ListGroup.Item>Estatus: {props.status}</ListGroup.Item>
-          {/* <ListGroup.Item>{props.order.dataEntry}</ListGroup.Item>
-          <ListGroup.Item>{props.order.newDataEntry}</ListGroup.Item> */}
           <ListGroup.Item>Tardó {orderTime()} min</ListGroup.Item>
         </ListGroup>
       </Card.Body>
