@@ -81,7 +81,7 @@ function AddProductForm(props) {
         </Form.Select>
       </Form.Group>
       <div className="d-grid">
-        <Button className='btn add' variant="outline-warning" type="submit">
+        <Button bsPrefix="add-product-btn" type="submit">
           Guardar
         </Button>
       </div>
