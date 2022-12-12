@@ -123,20 +123,22 @@ function WaiterView() {
               <option value='Almuerzo'>Almuerzo</option>
             </Form.Select>
           </Form>
-          {
-            specificList.map((product, index) => {
+          <div className="grid-waiter">
+            {
+              specificList.map((product, index) => {
 
-              return (
-                <div key={index}>
-                  <SpecificProductCard
-                    product={product}
-                    setSelectedItem={setSelectedItem}
-                    selectedItem={selectedItem}
-                  />
-                </div>
-              )
-            })
-          }
+                return (
+                  <div key={index}>
+                    <SpecificProductCard
+                      product={product}
+                      setSelectedItem={setSelectedItem}
+                      selectedItem={selectedItem}
+                    />
+                  </div>
+                )
+              })
+            }
+          </div>
         </section>
 
         <section className="order">

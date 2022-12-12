@@ -24,7 +24,7 @@ function SpecificProductCard(props) {
   }
 
   return (
-    <Card style={{ width: '15rem' }}>
+    <Card style={{ width: '15rem', height: '16rem' }}>
       <Card.Img variant='top' src={props.product.image} className='cardImg' />
       <Card.Body>
         <Card.Title>{props.product.name}</Card.Title>

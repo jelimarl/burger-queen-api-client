@@ -18,11 +18,17 @@
 .products {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .select-menu {
   margin-top: 2rem;
   width: 15rem;
+}
+
+.grid-waiter {
+  display: grid;
+  grid-template-columns: auto;
 }
 
 .order {
@@ -58,7 +64,9 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .orderSection {
-    gap: 8rem;
+
+  .grid-waiter {
+    grid-template-columns: auto auto;
+    gap: 1.5rem;
   }
 }
